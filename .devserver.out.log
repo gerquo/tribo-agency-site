@@ -1,0 +1,353 @@
+   ▲ Next.js 15.5.15
+   - Local:        http://localhost:3003
+   - Network:      http://192.168.181.1:3003
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 4.3s
+ ○ Compiling /portfolio ...
+ ✓ Compiled /portfolio in 15.2s (1596 modules)
+ GET /about 200 in 18239ms
+ GET / 200 in 18481ms
+ GET /portfolio 200 in 18608ms
+ GET /about 200 in 1021ms
+ GET / 200 in 1167ms
+ GET / 200 in 1160ms
+ ○ Compiling /services ...
+ ✓ Compiled /services in 1501ms (1566 modules)
+ GET /services 200 in 3953ms
+ ✓ Compiled /portfolio in 487ms (917 modules)
+ GET /portfolio 200 in 1711ms
+ ✓ Compiled /about in 400ms (926 modules)
+ GET /about 200 in 1529ms
+ ○ Compiling /pricing ...
+ ✓ Compiled /pricing in 1301ms (1602 modules)
+ GET /pricing 200 in 2592ms
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 1381ms (168 modules)
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 3.2s (1811 modules)
+ GET /contact 200 in 4188ms
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 1157ms (1828 modules)
+ GET /faq 200 in 1952ms
+ ○ Compiling /admin/dashboard ...
+ ✓ Compiled /admin/dashboard in 3.1s (1992 modules)
+ GET /admin/dashboard 200 in 5844ms
+ ○ Compiling /admin/login ...
+ ✓ Compiled /admin/login in 1402ms (2004 modules)
+ GET /admin/login 200 in 2485ms
+ GET / 200 in 1364ms
+ GET /services 200 in 699ms
+ ○ Compiling /projects/[slug] ...
+ ✓ Compiled /projects/[slug] in 3.7s (1883 modules)
+ GET /projects/cedar-grove-academy 200 in 7201ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 1352ms (1113 modules)
+ GET /contact 200 in 2450ms
+ ○ Compiling / ...
+ ✓ Compiled / in 624ms (1121 modules)
+ GET / 200 in 2341ms
+ GET / 200 in 1071ms
+ ○ Compiling /pricing ...
+ ✓ Compiled /pricing in 1071ms (1119 modules)
+ GET /pricing 200 in 2548ms
+ ✓ Compiled in 4.3s (1977 modules)
+ GET /pricing 200 in 595ms
+ ✓ Compiled in 1619ms (1895 modules)
+ GET /pricing 200 in 735ms
+ ✓ Compiled in 1430ms (1895 modules)
+ GET /pricing 200 in 550ms
+ ✓ Compiled in 1059ms (1895 modules)
+ GET /pricing 200 in 463ms
+ ○ Compiling /_error ...
+ GET /pricing 500 in 9014ms
+ GET /pricing 500 in 42ms
+ GET /pricing 500 in 43ms
+ GET /pricing 500 in 58ms
+ ✓ Compiled /_error in 2.1s (2241 modules)
+ GET /pricing 200 in 633ms
+ GET /pricing 200 in 3061ms
+ ✓ Compiled in 1315ms (2241 modules)
+ GET /pricing 200 in 613ms
+ ✓ Compiled in 1184ms (2241 modules)
+ GET /pricing 200 in 824ms
+ ✓ Compiled in 516ms (1010 modules)
+ GET /pricing 200 in 206ms
+ GET /contact 200 in 158ms
+ GET /contact 200 in 1212ms
+ ○ Compiling /portfolio ...
+ ✓ Compiled /portfolio in 2.1s (1244 modules)
+ GET /portfolio 200 in 4056ms
+ GET /projects/cedar-grove-academy 200 in 617ms
+ GET /contact 200 in 458ms
+ GET /contact 200 in 288ms
+ GET /contact 200 in 1062ms
+ ✓ Compiled in 4s (2241 modules)
+ GET /contact 200 in 511ms
+ ✓ Compiled in 1248ms (2241 modules)
+ GET /contact 200 in 417ms
+ ✓ Compiled in 1025ms (2241 modules)
+ GET /contact 200 in 747ms
+ ✓ Compiled in 1709ms (2241 modules)
+ GET /contact 200 in 273ms
+ GET /contact 200 in 99ms
+ ✓ Compiled in 669ms (1010 modules)
+ GET /contact 200 in 124ms
+ GET /contact 200 in 75ms
+ GET /contact 200 in 699ms
+ ✓ Compiled in 620ms (1010 modules)
+ GET /contact 200 in 104ms
+ GET /pricing 200 in 1206ms
+ ○ Compiling /portfolio ...
+ ✓ Compiled /portfolio in 2.1s (1244 modules)
+ GET /pricing 200 in 1400ms
+ GET /portfolio 200 in 3899ms
+ GET /contact 200 in 400ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 1407ms (1251 modules)
+ GET /pricing 200 in 1192ms
+ GET /about 200 in 3144ms
+ ○ Compiling /admin/login ...
+ ✓ Compiled /admin/login in 1549ms (1333 modules)
+ GET /about 200 in 937ms
+ GET /admin/login 200 in 2837ms
+ GET /pricing 200 in 1249ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 2.1s (2307 modules)
+ GET /admin 200 in 2865ms
+ ○ Compiling /admin/dashboard ...
+ ✓ Compiled /admin/dashboard in 1698ms (1328 modules)
+ GET /admin/login 200 in 1103ms
+ GET /admin/dashboard 200 in 3474ms
+ GET /admin/login 200 in 75ms
+ GET /admin/login 200 in 98ms
+ GET /admin/dashboard 200 in 965ms
+ GET /admin/dashboard 200 in 648ms
+ GET /admin/login 200 in 233ms
+ GET /admin/dashboard 200 in 1099ms
+ GET /admin/dashboard 200 in 715ms
+ ○ Compiling /admin/homepage ...
+ ✓ Compiled /admin/homepage in 2.9s (2234 modules)
+ GET /admin/homepage 200 in 4639ms
+ ○ Compiling /admin/projects ...
+ ✓ Compiled /admin/projects in 980ms (2236 modules)
+ GET /admin/projects 200 in 2183ms
+ ○ Compiling /admin/services ...
+ ✓ Compiled /admin/services in 1023ms (2238 modules)
+ GET /admin/services 200 in 2176ms
+ ○ Compiling /admin/pricing ...
+ ✓ Compiled /admin/pricing in 990ms (2240 modules)
+ GET /admin/pricing 200 in 2576ms
+ ○ Compiling /admin/trusted-by ...
+ ✓ Compiled /admin/trusted-by in 1101ms (2242 modules)
+ GET /admin/trusted-by 200 in 2315ms
+ ○ Compiling /admin/testimonials ...
+ ✓ Compiled /admin/testimonials in 1106ms (2244 modules)
+ GET /admin/testimonials 200 in 2270ms
+ ○ Compiling /admin/team ...
+ ✓ Compiled /admin/team in 1162ms (2246 modules)
+ GET /admin/team 200 in 2320ms
+ ○ Compiling /admin/messages ...
+ ✓ Compiled /admin/messages in 3.6s (2250 modules)
+ GET /admin/messages 200 in 6825ms
+ ✓ Compiled in 8.4s (2371 modules)
+ GET /admin/messages 200 in 5549ms
+ GET /admin/dashboard 200 in 5561ms
+ GET /admin/dashboard 200 in 271ms
+ GET /admin/messages 200 in 259ms
+ ✓ Compiled in 2.8s (2371 modules)
+ GET /admin/messages 200 in 3759ms
+ GET /admin/dashboard 200 in 3766ms
+ GET /admin/dashboard 200 in 464ms
+ GET /admin/messages 200 in 461ms
+ ✓ Compiled in 2.4s (1017 modules)
+ GET /admin/messages 200 in 201ms
+ GET /admin/dashboard 200 in 1178ms
+ ✓ Compiled in 602ms (1017 modules)
+ GET /admin/dashboard 200 in 338ms
+ GET /admin/messages 200 in 325ms
+ ✓ Compiled in 572ms (1017 modules)
+ GET /admin/messages 200 in 258ms
+ GET /admin/dashboard 200 in 263ms
+ ○ Compiling /admin/homepage ...
+ ✓ Compiled /admin/homepage in 3.3s (1212 modules)
+ GET /admin/homepage 200 in 4197ms
+ ○ Compiling / ...
+ ✓ Compiled / in 585ms (1221 modules)
+ GET / 200 in 1460ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 517ms (1225 modules)
+ GET /about 200 in 1227ms
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 1230ms (1246 modules)
+ GET /faq 200 in 2252ms
+ GET /faq 200 in 1094ms
+ GET /admin/messages 200 in 841ms
+ GET /faq 200 in 149ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 1975ms (1334 modules)
+ GET /contact 200 in 2218ms
+ GET /contact 200 in 59ms
+ ○ Compiling /portfolio ...
+ ✓ Compiled /portfolio in 671ms (1347 modules)
+ GET /portfolio 200 in 1377ms
+ ○ Compiling /pricing ...
+ ✓ Compiled /pricing in 719ms (1343 modules)
+ GET /pricing 200 in 1704ms
+ ○ Compiling /services ...
+ ✓ Compiled /services in 630ms (1347 modules)
+ GET /services 200 in 1198ms
+ GET / 200 in 926ms
+ GET /about 200 in 701ms
+ GET /services 200 in 479ms
+ GET /pricing 200 in 761ms
+ GET /portfolio 200 in 380ms
+ GET /contact 200 in 103ms
+ GET / 200 in 2472ms
+ GET / 200 in 4608ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 6.2s (1318 modules)
+ GET /admin 200 in 7252ms
+ ○ Compiling /admin/dashboard ...
+ ✓ Compiled /admin/dashboard in 757ms (1321 modules)
+ GET /admin/dashboard 200 in 2753ms
+ ○ Compiling /admin/projects ...
+ ✓ Compiled /admin/projects in 2.8s (1329 modules)
+ GET /admin/projects 200 in 3308ms
+ ○ Compiling /admin/team ...
+ ✓ Compiled /admin/team in 2.2s (1322 modules)
+ GET /admin/team 200 in 2799ms
+ ○ Compiling /api/admin/[entity]/[id] ...
+ ✓ Compiled /api/admin/[entity]/[id] in 3.6s (2348 modules)
+ ✓ Compiled in 864ms (1017 modules)
+ GET /admin/team 200 in 331ms
+ GET /admin/team 200 in 169ms
+ DELETE /api/admin/team_members/205fc4fd-3f96-49f9-bd7e-345827619b27 200 in 6981ms
+ GET /admin/team 200 in 519ms
+ DELETE /api/admin/team_members/f35f0cb6-efc0-4d4f-ad61-287c38373181 200 in 806ms
+ GET /admin/team 200 in 650ms
+ PATCH /api/admin/team_members/ed31aa43-9076-41d0-b159-9b0503d31eae 200 in 1792ms
+ PATCH /api/admin/team_members/64c2e13c-f308-4894-b253-bb9d3a1d03e7 200 in 974ms
+ PATCH /api/admin/team_members/550cb6e8-ef3b-48e8-a32b-3b0e784376a1 200 in 1687ms
+ GET /admin/team 200 in 1437ms
+ GET / 200 in 1466ms
+ GET /contact 200 in 133ms
+ ○ Compiling /about ...
+ ✓ Compiled /about in 3.7s (1322 modules)
+ GET /about 200 in 4754ms
+ ✓ Compiled in 5.8s (2321 modules)
+ GET /about 200 in 570ms
+ GET /about 200 in 1456ms
+ GET /about 200 in 2668ms
+ ✓ Compiled in 3s (2321 modules)
+ GET /about 200 in 455ms
+ GET /about 200 in 977ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1424ms (1322 modules)
+ GET / 200 in 259ms
+ GET / 200 in 3176ms
+ GET /about 200 in 3475ms
+ ✓ Compiled in 1565ms (1017 modules)
+ ✓ Compiled in 693ms (1017 modules)
+ GET /about 200 in 704ms
+ GET /about 200 in 179ms
+ ✓ Compiled in 7.8s (2227 modules)
+ GET /about 200 in 527ms
+ ✓ Compiled in 1128ms (2241 modules)
+ GET /about 200 in 483ms
+ ✓ Compiled in 2s (2227 modules)
+ GET /about 200 in 252ms
+ ✓ Compiled in 1610ms (1018 modules)
+ GET /about 200 in 197ms
+ ✓ Compiled in 5.2s (2244 modules)
+ GET /about 200 in 550ms
+ ✓ Compiled in 539ms (1019 modules)
+ GET /about 200 in 245ms
+ ✓ Compiled in 575ms (1019 modules)
+ GET /about 200 in 321ms
+ ✓ Compiled in 3.7s (2228 modules)
+ GET /about 200 in 327ms
+ ✓ Compiled in 539ms (1019 modules)
+ GET /about 200 in 219ms
+ ✓ Compiled in 498ms (1019 modules)
+ GET /about 200 in 198ms
+ GET /about 500 in 86ms
+ GET /about 500 in 44ms
+ GET /about 500 in 579ms
+ ✓ Compiled in 2.2s (2242 modules)
+ GET /about 200 in 2064ms
+ ✓ Compiled (2228 modules)
+ GET /about 200 in 1760ms
+ GET /about 200 in 1589ms
+ GET / 200 in 964ms
+ ○ Compiling /pricing ...
+ ✓ Compiled /pricing in 11.7s (2239 modules)
+ GET /pricing 200 in 248ms
+ GET /pricing 200 in 13172ms
+ GET /pricing 200 in 764ms
+ ○ Compiling /portfolio ...
+ ✓ Compiled /portfolio in 2.2s (2249 modules)
+ GET /portfolio 200 in 170ms
+ GET /portfolio 200 in 3457ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 2.2s (2347 modules)
+ GET /contact 200 in 2618ms
+ GET /contact 200 in 105ms
+ GET /about 200 in 637ms
+ GET / 200 in 702ms
+ GET /about 200 in 566ms
+ ○ Compiling /services ...
+ ✓ Compiled /services in 1019ms (2244 modules)
+ GET /services 200 in 2451ms
+ GET /services 200 in 673ms
+ GET /services 200 in 784ms
+ GET /pricing 200 in 622ms
+ GET /services 200 in 427ms
+ GET /about 200 in 626ms
+ GET /services 200 in 423ms
+ GET /contact 200 in 104ms
+ GET /services 200 in 571ms
+ GET /about 200 in 548ms
+ GET /contact 200 in 117ms
+ GET /contact 200 in 99ms
+ ✓ Compiled in 25.4s (2240 modules)
+ GET /contact 200 in 1230ms
+ ✓ Compiled in 4s (2240 modules)
+ GET /contact 200 in 372ms
+ ✓ Compiled in 3.8s (2240 modules)
+ GET /contact 200 in 455ms
+ ○ Compiling /admin/messages ...
+ ✓ Compiled /admin/messages in 19.9s (2339 modules)
+ GET /admin/messages 200 in 21797ms
+ GET /contact 200 in 1591ms
+ ✓ Compiled in 4.6s (2330 modules)
+ GET /contact 200 in 1368ms
+ GET /admin/messages 200 in 1382ms
+ ✓ Compiled in 4s (2330 modules)
+ GET /admin/messages 200 in 563ms
+ GET /contact 200 in 186ms
+ ✓ Compiled in 3.3s (2330 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 3.1s (2317 modules)
+ GET /admin/messages 404 in 3601ms
+ GET /contact 200 in 3088ms
+ GET /admin/messages 200 in 1489ms
+ ✓ Compiled in 6.1s (2331 modules)
+ GET /admin/messages 200 in 708ms
+ GET /contact 200 in 694ms
+ ✓ Compiled in 17.4s (2330 modules)
+ GET /contact 200 in 1260ms
+ GET /admin/messages 200 in 1271ms
+ ✓ Compiled in 7.7s (2330 modules)
+ GET /admin/messages 200 in 2607ms
+ GET /contact 200 in 760ms
+ ✓ Compiled in 11.7s (2330 modules)
+ GET /admin/messages 200 in 2483ms
+ GET /contact 200 in 2319ms
+ ✓ Compiled in 13.1s (2330 modules)
+ GET /contact 200 in 1806ms
+ GET /admin/messages 200 in 2179ms
+ ✓ Compiled in 13.6s (2330 modules)
+ GET /contact 200 in 1857ms
+ GET /admin/messages 200 in 1893ms

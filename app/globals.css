@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 30% 97%;
+    --foreground: 244 28% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 244 28% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 244 28% 11%;
+    --primary: 247 45% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 248 24% 93%;
+    --secondary-foreground: 244 28% 11%;
+    --muted: 248 24% 93%;
+    --muted-foreground: 244 11% 42%;
+    --accent: 50 100% 51%;
+    --accent-foreground: 244 28% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 246 18% 86%;
+    --input: 246 18% 86%;
+    --ring: 247 45% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 246 34% 8%;
+    --foreground: 42 35% 96%;
+    --card: 246 24% 11%;
+    --card-foreground: 42 35% 96%;
+    --popover: 246 24% 11%;
+    --popover-foreground: 42 35% 96%;
+    --primary: 247 69% 72%;
+    --primary-foreground: 246 34% 8%;
+    --secondary: 247 18% 17%;
+    --secondary-foreground: 42 35% 96%;
+    --muted: 247 18% 17%;
+    --muted-foreground: 246 14% 72%;
+    --accent: 50 100% 57%;
+    --accent-foreground: 246 34% 8%;
+    --destructive: 0 68% 52%;
+    --destructive-foreground: 42 35% 96%;
+    --border: 246 16% 24%;
+    --input: 246 16% 24%;
+    --ring: 247 69% 72%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .premium-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.28) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.28) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+}
