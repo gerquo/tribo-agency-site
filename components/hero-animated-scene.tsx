@@ -195,7 +195,7 @@ export function HeroAnimatedScene() {
             <span className="hidden h-1 w-1 rounded-full bg-border sm:inline-block" />
             <span>Product Design</span>
           </div>
-          <h1 className="mx-auto mt-7 max-w-5xl text-balance text-4xl font-black tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem]">
+          <h1 className="mx-auto mt-7 max-w-5xl font-display text-balance text-5xl font-semibold leading-[0.92] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[6.15rem]">
             We Build Digital Experiences That Help Brands Grow
           </h1>
           <p className="mx-auto mt-5 max-w-[46rem] text-balance text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8 lg:text-lg">

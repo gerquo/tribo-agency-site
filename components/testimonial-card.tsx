@@ -21,7 +21,7 @@ export function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <Reveal as="article" className="h-full">
-      <Card className="h-full bg-card/86">
+      <Card className="interactive-card h-full bg-card/86">
         <CardContent className="p-6">
           <Quote className="h-7 w-7 text-primary" aria-hidden />
           <p className="mt-5 text-base leading-8 text-foreground">

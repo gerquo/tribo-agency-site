@@ -110,13 +110,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </Reveal>
           <div className="mt-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <Reveal as="div">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
+              <p className="eyebrow">
                 {project.category} Case Study
               </p>
-              <h1 className="mt-4 text-4xl font-black tracking-tight text-balance sm:text-6xl">
+              <h1 className="mt-4 max-w-[11ch] font-display text-5xl font-semibold leading-[0.94] tracking-tight text-balance sm:text-6xl lg:text-7xl">
                 {project.title}
               </h1>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
                 {project.summary}
               </p>
               {showLivePreview ? (
@@ -130,7 +130,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <Reveal
               as="div"
               delay={0.05}
-              className="grid gap-4 rounded-lg border border-border bg-card p-5 sm:grid-cols-3"
+              className="section-panel-alt grid gap-4 p-5 sm:grid-cols-3"
             >
               <Meta label="Client" value={project.client} />
               <Meta label="Year" value={project.year} />
@@ -154,8 +154,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </Reveal>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-          <Reveal as="aside" className="rounded-lg border border-border bg-card p-6 lg:sticky lg:top-24 lg:self-start">
-            <h2 className="text-lg font-bold">Technologies</h2>
+          <Reveal as="aside" className="section-panel-alt p-6 lg:sticky lg:top-24 lg:self-start">
+            <p className="eyebrow">Project stack</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">Technologies</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
@@ -166,7 +167,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </span>
               ))}
             </div>
-            <h2 className="mt-8 text-lg font-bold">Results</h2>
+            <p className="eyebrow mt-8">Outcome markers</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">Results</h2>
             <div className="mt-4 grid gap-3">
               {project.results.map((result) => (
                 <p
@@ -235,7 +237,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+      <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-muted-foreground">
         {label}
       </p>
       <p className="mt-2 font-semibold">{value}</p>
@@ -246,9 +248,10 @@ function Meta({ label, value }: { label: string; value: string }) {
 function CaseSection({ title, body }: { title: string; body: string }) {
   return (
     <StaggerItem>
-      <section className="rounded-lg border border-border bg-card p-6 sm:p-8">
-        <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="mt-4 text-base leading-8 text-muted-foreground">{body}</p>
+      <section className="section-panel-alt p-6 sm:p-8">
+        <p className="eyebrow">Case study</p>
+        <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight">{title}</h2>
+        <p className="mt-5 max-w-3xl text-base leading-8 text-muted-foreground">{body}</p>
       </section>
     </StaggerItem>
   );

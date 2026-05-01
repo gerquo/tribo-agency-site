@@ -77,7 +77,7 @@ export function ContactSection() {
           <StaggerContainer className="mt-8 grid gap-3">
             {contactDetails.map((detail) => (
               <StaggerItem key={detail.label}>
-                <div className="flex gap-4 rounded-lg border border-border bg-card/90 p-4">
+                <div className="interactive-card flex gap-4 rounded-lg border border-border bg-card/90 p-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/12 text-primary">
                     <detail.icon className="h-5 w-5" />
                   </div>
@@ -102,7 +102,7 @@ export function ContactSection() {
           </StaggerContainer>
 
           {!isPlaceholderPhone(site.whatsapp) ? (
-            <Reveal as="div" className="mt-5 rounded-lg border border-border bg-card p-5" y={12}>
+            <Reveal as="div" className="interactive-card mt-5 rounded-lg border border-border bg-card p-5" y={12}>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="font-bold">Want a faster start?</p>

@@ -38,21 +38,22 @@ export default async function PricingPage() {
         label="PRICING"
         title="Clearer expectations before you start a project."
         subtitle="Every engagement is scoped around goals, complexity, content, and timeline. This page gives you realistic starting ranges and a better sense of what drives budget."
-        image="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80"
+        image={pageImages.pricing}
       />
 
       <section className="section-padding">
         <StaggerContainer className="container grid gap-6 lg:grid-cols-3">
           {pricingPackages.map((band) => (
             <StaggerItem key={band.title}>
-              <article className="rounded-lg border border-border bg-card p-6 shadow-sm">
-                <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
+              <article className="section-panel-alt flex h-full flex-col p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-premium">
+                <div className="mb-4 h-px w-16 bg-primary/70" />
+                <p className="eyebrow">
                   {band.title}
                 </p>
-                <h2 className="mt-3 text-3xl font-black tracking-tight">
+                <h2 className="mt-3 min-h-[5.75rem] font-display text-4xl font-semibold leading-[0.95] tracking-tight">
                   {band.range}
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                <p className="mt-5 min-h-[7.25rem] text-sm leading-7 text-muted-foreground">
                   {band.description}
                 </p>
                 <div className="mt-6 grid gap-3">
@@ -78,10 +79,10 @@ export default async function PricingPage() {
       <section className="section-padding">
         <div className="container grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal as="div">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
+            <p className="eyebrow">
               What changes the price
             </p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
+            <h2 className="mt-4 max-w-[12ch] font-display text-4xl font-semibold leading-[0.96] tracking-tight sm:text-5xl">
               Scope matters more than labels.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
@@ -90,11 +91,11 @@ export default async function PricingPage() {
               and whether the project also includes UX strategy or support after launch.
             </p>
           </Reveal>
-          <Reveal as="div" className="rounded-lg border border-border bg-card p-6 shadow-sm" delay={0.05}>
+          <Reveal as="div" className="section-panel-alt p-6" delay={0.05}>
             <StaggerContainer className="grid gap-4">
               {pricingFactors.map((factor) => (
                 <StaggerItem key={factor.text}>
-                  <div className="rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground">
+                  <div className="rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground transition duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-sm">
                     <div className="flex gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                       <span>{factor.text}</span>
@@ -108,13 +109,13 @@ export default async function PricingPage() {
       </section>
 
       <section className="section-padding bg-card/45">
-        <Reveal className="container rounded-lg border border-border bg-background p-8 shadow-sm lg:p-10">
+        <Reveal className="container section-panel p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
+              <p className="eyebrow">
                 Need a firmer number?
               </p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
+              <h2 className="mt-4 max-w-[13ch] font-display text-4xl font-semibold leading-[0.96] tracking-tight sm:text-5xl">
                 The fastest path to a real quote is a clear brief.
               </h2>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">

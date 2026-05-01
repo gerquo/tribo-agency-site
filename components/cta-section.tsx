@@ -19,13 +19,11 @@ export function CtaSection() {
           <p className="text-sm font-bold uppercase tracking-[0.22em] opacity-80">
             Start with clarity
           </p>
-          <h2 className="mt-4 text-3xl font-black tracking-tight text-balance sm:text-5xl">
-            Have a project in mind? Let&apos;s build something modern,
-            functional, and impactful.
+          <h2 className="mt-4 font-display text-4xl font-semibold leading-[0.95] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            Bring us the goal. We&apos;ll shape the website, product, or system around it.
           </h2>
-          <p className="mt-5 text-base leading-8 opacity-85 sm:text-lg">
-            Bring us your goals, constraints, and vision. We will help turn them
-            into a digital product that looks premium and works reliably.
+          <p className="mt-5 text-sm font-medium uppercase tracking-[0.18em] opacity-80 sm:text-base">
+            Typical first reply within one business day
           </p>
         </div>
         <div className="flex flex-wrap gap-3">

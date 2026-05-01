@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 type RevealTag = "div" | "section" | "article" | "header" | "aside";
 
@@ -27,30 +28,122 @@ export function Reveal({
   ...props
 }: RevealProps) {
   const prefersReducedMotion = useReducedMotion();
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const articleRef = useRef<HTMLElement | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const asideRef = useRef<HTMLElement | null>(null);
+  const [revealed, setRevealed] = useState(prefersReducedMotion);
+  const [shouldAnimateOnView, setShouldAnimateOnView] = useState(false);
+  const elementRef =
+    as === "section"
+      ? sectionRef
+      : as === "article"
+        ? articleRef
+        : as === "header"
+          ? headerRef
+          : as === "aside"
+            ? asideRef
+            : divRef;
   const sharedProps = {
     className,
     ...props
   };
 
+  useEffect(() => {
+    if (prefersReducedMotion || typeof window === "undefined") {
+      setRevealed(true);
+      setShouldAnimateOnView(false);
+      return;
+    }
+
+    const element = elementRef.current;
+
+    if (!element) {
+      return;
+    }
+
+    let frameId = 0;
+
+    const checkVisibility = () => {
+      frameId = 0;
+
+      const rect = element.getBoundingClientRect();
+      const thresholdPx = window.innerHeight * (1 - amount);
+      const inView = rect.top <= thresholdPx && rect.bottom >= 0;
+
+      if (inView) {
+        setRevealed(true);
+        setShouldAnimateOnView(true);
+        return;
+      }
+
+      setShouldAnimateOnView(true);
+
+      if (!once) {
+        setRevealed(false);
+      }
+    };
+
+    const scheduleCheck = () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+
+      frameId = window.requestAnimationFrame(checkVisibility);
+    };
+
+    scheduleCheck();
+    window.addEventListener("scroll", scheduleCheck, { passive: true });
+    window.addEventListener("resize", scheduleCheck);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleCheck);
+      window.removeEventListener("resize", scheduleCheck);
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+    };
+  }, [amount, elementRef, once, prefersReducedMotion]);
+
   if (prefersReducedMotion) {
     switch (as) {
       case "section":
-        return <motion.section {...sharedProps}>{children}</motion.section>;
+        return (
+          <motion.section ref={sectionRef} {...sharedProps}>
+            {children}
+          </motion.section>
+        );
       case "article":
-        return <motion.article {...sharedProps}>{children}</motion.article>;
+        return (
+          <motion.article ref={articleRef} {...sharedProps}>
+            {children}
+          </motion.article>
+        );
       case "header":
-        return <motion.header {...sharedProps}>{children}</motion.header>;
+        return (
+          <motion.header ref={headerRef} {...sharedProps}>
+            {children}
+          </motion.header>
+        );
       case "aside":
-        return <motion.aside {...sharedProps}>{children}</motion.aside>;
+        return (
+          <motion.aside ref={asideRef} {...sharedProps}>
+            {children}
+          </motion.aside>
+        );
       default:
-        return <motion.div {...sharedProps}>{children}</motion.div>;
+        return (
+          <motion.div ref={divRef} {...sharedProps}>
+            {children}
+          </motion.div>
+        );
     }
   }
 
   const animationProps = {
-    initial: "hidden" as const,
-    whileInView: "visible" as const,
-    viewport: { once, amount },
+    initial: false,
+    animate: shouldAnimateOnView ? (revealed ? "visible" : "hidden") : "visible",
     variants: {
       hidden: {
         opacity: 0,
@@ -71,14 +164,34 @@ export function Reveal({
 
   switch (as) {
     case "section":
-      return <motion.section {...animationProps}>{children}</motion.section>;
+      return (
+        <motion.section ref={sectionRef} {...animationProps}>
+          {children}
+        </motion.section>
+      );
     case "article":
-      return <motion.article {...animationProps}>{children}</motion.article>;
+      return (
+        <motion.article ref={articleRef} {...animationProps}>
+          {children}
+        </motion.article>
+      );
     case "header":
-      return <motion.header {...animationProps}>{children}</motion.header>;
+      return (
+        <motion.header ref={headerRef} {...animationProps}>
+          {children}
+        </motion.header>
+      );
     case "aside":
-      return <motion.aside {...animationProps}>{children}</motion.aside>;
+      return (
+        <motion.aside ref={asideRef} {...animationProps}>
+          {children}
+        </motion.aside>
+      );
     default:
-      return <motion.div {...animationProps}>{children}</motion.div>;
+      return (
+        <motion.div ref={divRef} {...animationProps}>
+          {children}
+        </motion.div>
+      );
   }
 }

@@ -44,13 +44,13 @@ export default async function ServicesPage() {
               <StaggerItem key={service.title}>
                 <article
                   id={service.href.split("#")[1]}
-                  className="grid gap-8 rounded-lg border border-border bg-card p-6 shadow-sm md:p-8 lg:grid-cols-[0.8fr_1.2fr]"
+                  className="interactive-card grid gap-8 rounded-lg border border-border bg-card p-6 shadow-sm md:p-8 lg:grid-cols-[0.8fr_1.2fr]"
                 >
                   <div>
                     <div className="flex h-12 w-12 items-center justify-center rounded-md bg-primary/12 text-primary">
                       <service.icon className="h-6 w-6" />
                     </div>
-                    <h2 className="mt-5 text-3xl font-black tracking-tight">
+                    <h2 className="mt-5 max-w-[12ch] display-title text-4xl leading-[0.96]">
                       {service.title}
                     </h2>
                     <p className="mt-4 leading-8 text-muted-foreground">
@@ -63,8 +63,8 @@ export default async function ServicesPage() {
                     </Button>
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <div className="rounded-lg border border-border bg-background p-5">
-                      <h3 className="font-bold">Key features</h3>
+                    <div className="interactive-card rounded-lg border border-border bg-background p-5">
+                      <h3 className="display-title text-[1.45rem] leading-none">Key features</h3>
                       <div className="mt-4 grid gap-3">
                         {service.features.map((feature) => (
                           <p key={feature} className="flex gap-2 text-sm text-muted-foreground">
@@ -74,8 +74,8 @@ export default async function ServicesPage() {
                         ))}
                       </div>
                     </div>
-                    <div className="rounded-lg border border-border bg-background p-5">
-                      <h3 className="font-bold">Who it is for</h3>
+                    <div className="interactive-card rounded-lg border border-border bg-background p-5">
+                      <h3 className="display-title text-[1.45rem] leading-none">Who it is for</h3>
                       <p className="mt-4 text-sm leading-7 text-muted-foreground">
                         {service.forWhom}
                       </p>

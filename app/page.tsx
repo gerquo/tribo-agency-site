@@ -73,17 +73,26 @@ export default async function Home() {
         className="section-padding bg-card/40 pt-24 sm:pt-28 lg:pt-32"
       >
         <div className="container">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
             <SectionHeading
               eyebrow="Services"
               title="Focused digital services for teams that need sharp execution."
               description="We design and build websites, software, and digital systems that feel premium, perform cleanly, and support real growth."
             />
-            <Button asChild variant="outline" className="w-fit">
-              <Link href="/services">
-                View all services <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="section-panel p-5">
+              <p className="eyebrow">
+                One tight team
+              </p>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Strategy, interface design, engineering, and launch support shaped
+                into one deliberate delivery process.
+              </p>
+              <Button asChild variant="outline" className="mt-5 w-fit">
+                <Link href="/services">
+                  View all services <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <StaggerContainer className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -122,17 +131,26 @@ export default async function Home() {
         className="section-padding"
       >
         <div className="container">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
             <SectionHeading
               eyebrow="Featured Projects"
               title="Selected work built to convert, clarify, and scale."
               description="A tighter look at recent launches across business websites, commerce, and software products."
             />
-            <Button asChild variant="outline" className="w-fit">
-              <Link href="/portfolio">
-                Explore portfolio <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="section-panel-alt p-5">
+              <p className="eyebrow">
+                What this shows
+              </p>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                Clear positioning, stronger product presentation, and interfaces
+                built to earn trust quickly.
+              </p>
+              <Button asChild variant="outline" className="mt-5 w-fit">
+                <Link href="/portfolio">
+                  Explore portfolio <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <StaggerContainer className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -160,7 +178,10 @@ export default async function Home() {
           <StaggerContainer className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {reasons.slice(0, 4).map((reason) => (
               <StaggerItem key={reason.title}>
-                <div className="rounded-lg border border-border bg-background p-6 shadow-sm">
+                <div className="section-panel p-6">
+                  <p className="eyebrow">
+                    Standard
+                  </p>
                   <reason.icon className="h-7 w-7 text-primary" />
                   <h3 className="mt-5 text-lg font-bold">{reason.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-muted-foreground">
@@ -183,9 +204,15 @@ export default async function Home() {
       >
         <div className="container flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-foreground/78">
+              Ready when you are
+            </p>
             <h2 className="text-3xl font-black tracking-tight text-balance sm:text-5xl">
               Ready for a sharper digital presence that actually performs?
             </h2>
+            <p className="mt-5 text-sm font-medium uppercase tracking-[0.18em] text-primary-foreground/80 sm:text-base">
+              Strategy, design, engineering, and launch support in one place
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg" variant="secondary">

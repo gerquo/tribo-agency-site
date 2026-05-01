@@ -351,3 +351,90 @@
  ✓ Compiled in 13.6s (2330 modules)
  GET /contact 200 in 1857ms
  GET /admin/messages 200 in 1893ms
+ GET /services 500 in 3266ms
+ GET /services 500 in 898ms
+ ✓ Compiled in 37.3s (2340 modules)
+ ✓ Compiled in 54s (2340 modules)
+ ✓ Compiled in 686ms (1022 modules)
+ ✓ Compiled in 10.6s (2365 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 1986ms (1338 modules)
+ GET / 200 in 6191ms
+ GET / 200 in 1655ms
+ GET / 200 in 1484ms
+ ✓ Compiled in 5.3s (2343 modules)
+ GET / 200 in 2152ms
+ GET /about 200 in 788ms
+ GET / 200 in 1145ms
+ GET /portfolio 200 in 773ms
+ ○ Compiling /pricing ...
+ ✓ Compiled /pricing in 2.9s (1342 modules)
+ GET /pricing 200 in 2218ms
+ GET /pricing 200 in 869ms
+ GET /contact 200 in 453ms
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 3.3s (2362 modules)
+ GET /faq 200 in 4129ms
+ GET / 200 in 1503ms
+ ✓ Compiled in 8.7s (2338 modules)
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 620ms (1326 modules)
+ GET /faq 200 in 1653ms
+ ✓ Compiled / in 458ms (1344 modules)
+ GET / 200 in 2388ms
+ GET /about 200 in 818ms
+ GET /services 200 in 1878ms
+ ○ Compiling /pricing ...
+ ✓ Compiled /pricing in 3.9s (1353 modules)
+ GET /pricing 200 in 4568ms
+ GET /pricing 200 in 824ms
+ GET /portfolio 200 in 714ms
+ GET /contact 200 in 421ms
+ GET /faq 200 in 483ms
+ GET / 200 in 1044ms
+ GET / 200 in 1642ms
+ ✓ Compiled in 5.5s (2338 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 541ms (1333 modules)
+ GET / 200 in 2021ms
+ GET /about 200 in 883ms
+ GET / 200 in 3910ms
+ GET /portfolio 200 in 1839ms
+ ✓ Compiled in 4.4s (2338 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 552ms (1333 modules)
+ GET / 200 in 2740ms
+ ✓ Compiled in 3.2s (2356 modules)
+ GET /portfolio 200 in 1221ms
+ GET / 200 in 1150ms
+ GET /contact 200 in 426ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1798ms (1334 modules)
+ GET /services 404 in 2178ms
+ GET / 200 in 1373ms
+ GET /services 200 in 759ms
+ GET /about 200 in 607ms
+ ○ Compiling /pricing ...
+ ✓ Compiled /pricing in 3s (1343 modules)
+ GET /pricing 200 in 4116ms
+ GET /contact 200 in 324ms
+ GET /portfolio 200 in 548ms
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 705ms (1354 modules)
+ GET /faq 200 in 1382ms
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 2.1s (1326 modules)
+ GET /faq 500 in 2307ms
+ GET /faq 500 in 32ms
+ ✓ Compiled in 3.4s (1315 modules)
+ ○ Compiling /faq ...
+ ✓ Compiled /faq in 616ms (1326 modules)
+ GET /faq 500 in 759ms
+ GET /faq 500 in 29ms
+ GET /faq 500 in 101ms
+ GET /faq 500 in 28ms
+ GET /faq 500 in 121ms
+ GET /faq 500 in 42ms
+ ✓ Compiled in 8.6s (2338 modules)
+ ✓ Compiled in 29.6s (1023 modules)
+ ✓ Compiled in 14.8s (1023 modules)

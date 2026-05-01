@@ -28,24 +28,29 @@ export function ServiceCard({
 }: ServiceCardProps) {
   return (
     <Reveal as="article" className="h-full">
-      <Card className="group flex h-full flex-col rounded-lg bg-card/86 transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-premium">
+      <Card className="group flex h-full flex-col rounded-lg border-border/85 bg-card/84 transition duration-300 hover:-translate-y-1 hover:border-primary/18 hover:shadow-premium">
         <CardHeader>
+          <div className="mb-5 h-px w-16 bg-primary/70 transition-all duration-300 group-hover:w-24" />
           <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-primary/12 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
             <Icon className="h-5 w-5" />
           </div>
           {eyebrow ? (
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-primary">
+            <p className="eyebrow">
               {eyebrow}
             </p>
           ) : null}
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="text-[1.34rem] tracking-tight">{title}</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-1 flex-col">
-          <CardDescription className="line-clamp-2 leading-6">
+          <CardDescription className="line-clamp-2 text-[0.95rem] leading-7">
             {description}
           </CardDescription>
           {href ? (
-            <Button asChild variant="link" className="mt-auto justify-start pt-6">
+            <Button
+              asChild
+              variant="link"
+              className="mt-auto justify-start px-0 pt-6 text-foreground hover:text-primary"
+            >
               <Link href={href}>
                 Learn more <ArrowRight className="h-4 w-4" />
               </Link>

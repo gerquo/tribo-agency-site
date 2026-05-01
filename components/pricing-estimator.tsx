@@ -66,8 +66,8 @@ export function PricingEstimator({
       integrationLevel.modifier +
       timeline.modifier;
 
-    const floor = Math.max(35000, Math.round(subtotal * 0.9 / 100) * 100);
-    const ceiling = Math.round(subtotal * 1.2 / 100) * 100;
+    const floor = Math.max(3000, Math.round(subtotal * 0.9 / 100) * 100);
+    const ceiling = Math.max(floor + 500, Math.round(subtotal * 1.18 / 100) * 100);
 
     return {
       floor,
@@ -84,15 +84,10 @@ export function PricingEstimator({
 
   return (
     <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-      <Reveal
-        as="div"
-        className="rounded-lg border border-border bg-card p-6 shadow-sm md:p-8"
-      >
+      <Reveal as="div" className="section-panel-alt p-6 md:p-8">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
-            Estimate planner
-          </p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight">
+          <p className="eyebrow">Estimate planner</p>
+          <h2 className="mt-3 max-w-[12ch] font-display text-4xl font-semibold leading-[0.96] tracking-tight">
             Get a grounded budget range before we talk.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
@@ -143,14 +138,14 @@ export function PricingEstimator({
       <Reveal
         as="aside"
         delay={0.05}
-        className="rounded-lg border border-border bg-background p-6 shadow-sm md:p-8 lg:sticky lg:top-24 lg:h-fit"
+        className="section-panel p-6 md:p-8 lg:sticky lg:top-24 lg:h-fit"
       >
-        <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
-          Expected investment
-        </p>
-        <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/8 p-5">
-          <p className="text-sm text-muted-foreground">Estimated range</p>
-          <p className="mt-2 text-4xl font-black tracking-tight">
+        <p className="eyebrow">Expected investment</p>
+        <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/8 p-5 transition duration-300 hover:border-primary/25 hover:shadow-sm">
+          <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
+            Estimated range
+          </p>
+          <p className="mt-3 font-display text-5xl font-semibold leading-[0.92] tracking-tight">
             {formatCedi(estimate.floor)} - {formatCedi(estimate.ceiling)}
           </p>
           <p className="mt-3 text-sm leading-7 text-muted-foreground">
@@ -159,7 +154,7 @@ export function PricingEstimator({
           </p>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-border bg-card p-5">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-5 transition duration-300 hover:border-primary/15 hover:shadow-sm">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-muted-foreground">
             Based on
           </p>
@@ -204,7 +199,7 @@ function EstimatorGroup({
 }) {
   return (
     <div>
-      <h3 className="text-lg font-bold">{title}</h3>
+      <h3 className="font-display text-[1.7rem] font-semibold tracking-tight">{title}</h3>
       <div className="mt-4 grid gap-3">
         {options[group].map((option) => {
           const active = option.id === selected;
@@ -215,10 +210,10 @@ function EstimatorGroup({
               type="button"
               onClick={() => onSelect(option.id)}
               className={cn(
-                "rounded-2xl border px-4 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "rounded-2xl border px-4 py-4 text-left transition-[transform,color,background-color,border-color,box-shadow] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 active
                   ? "border-primary bg-primary/8 shadow-sm"
-                  : "border-border bg-background hover:border-primary/30 hover:bg-card"
+                  : "border-border bg-background hover:-translate-y-0.5 hover:border-primary/30 hover:bg-card hover:shadow-sm"
               )}
               aria-pressed={active}
             >
@@ -232,9 +227,7 @@ function EstimatorGroup({
                 <span
                   className={cn(
                     "mt-1 h-3.5 w-3.5 rounded-full border",
-                    active
-                      ? "border-primary bg-primary"
-                      : "border-border bg-transparent"
+                    active ? "border-primary bg-primary" : "border-border bg-transparent"
                   )}
                 />
               </div>

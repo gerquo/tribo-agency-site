@@ -19,10 +19,11 @@ export function ProjectCard({
   const isExternalCaseStudy = /^https?:\/\//.test(caseStudyHref);
   const showLivePreview = !isPlaceholderExternalUrl(project.liveUrl);
   const supportingCopy = compact ? project.summary : project.description;
+  const technologies = compact ? project.technologies.slice(0, 3) : project.technologies;
 
   return (
     <Reveal as="article" className="h-full">
-      <Card className="group overflow-hidden rounded-lg bg-card/90 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-premium">
+      <Card className="group overflow-hidden rounded-lg border-border/85 bg-card/90 transition duration-300 hover:-translate-y-1 hover:border-primary/24 hover:shadow-premium">
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={project.image}
@@ -50,19 +51,23 @@ export function ProjectCard({
         </div>
         <CardContent className="flex h-full flex-col p-6">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+            <div className="mb-4 h-px w-16 bg-primary/70" />
+            <p className="eyebrow">
               {project.client} / {project.year}
             </p>
-            <h3 className="mt-3 text-2xl font-bold tracking-tight transition-colors group-hover:text-primary">
+            <h3 className="mt-3 font-display text-[2rem] font-semibold leading-[0.98] tracking-tight transition-colors group-hover:text-primary">
               {project.title}
             </h3>
+            <p className="mt-2 text-sm font-medium text-foreground/80">
+              Built for teams that need a sharper digital presence.
+            </p>
             <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted-foreground">
               {supportingCopy}
             </p>
           </div>
 
           <div className="mt-5 flex flex-wrap gap-2" aria-label="Technology stack">
-            {project.technologies.map((tech) => (
+            {technologies.map((tech) => (
               <span
                 key={tech}
                 className="rounded-md border border-border bg-secondary/70 px-2.5 py-1 text-xs font-medium text-secondary-foreground"
@@ -70,6 +75,11 @@ export function ProjectCard({
                 {tech}
               </span>
             ))}
+            {compact && project.technologies.length > technologies.length ? (
+              <span className="rounded-md border border-border bg-secondary/40 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                +{project.technologies.length - technologies.length} more
+              </span>
+            ) : null}
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3 border-t border-border pt-5">
@@ -83,13 +93,13 @@ export function ProjectCard({
             {isExternalCaseStudy ? (
               <Button asChild size="sm">
                 <a href={caseStudyHref} target="_blank" rel="noreferrer">
-                  Case Study <ArrowUpRight className="h-4 w-4" />
+                  View Case Study <ArrowUpRight className="h-4 w-4" />
                 </a>
               </Button>
             ) : (
               <Button asChild size="sm">
                 <Link href={caseStudyHref}>
-                  Case Study <ArrowUpRight className="h-4 w-4" />
+                  View Case Study <ArrowUpRight className="h-4 w-4" />
                 </Link>
               </Button>
             )}

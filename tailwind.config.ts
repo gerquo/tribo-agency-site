@@ -57,7 +57,8 @@ const config: Config = {
         premium: "0 24px 70px rgba(8, 13, 28, 0.14)"
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"]
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
+        display: ["var(--font-display)", "Georgia", "serif"]
       }
     }
   },

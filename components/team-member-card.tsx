@@ -34,7 +34,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
 
   return (
     <Reveal as="article" className="h-full">
-      <article className="group overflow-hidden rounded-lg border border-border bg-card transition duration-300 hover:-translate-y-1 hover:shadow-premium">
+      <article className="group interactive-card overflow-hidden rounded-lg border border-border bg-card">
         <Image
           src={member.image}
           alt={member.name}
@@ -45,7 +45,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
         <div className="p-5">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <h3 className="text-xl font-bold">{member.name}</h3>
+              <h3 className="display-title text-[1.7rem] leading-none">{member.name}</h3>
               <p className="mt-1 text-sm font-semibold text-primary">
                 {member.role}
               </p>

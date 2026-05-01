@@ -111,23 +111,83 @@ export const pricingEstimatorOptions: {
     }
   ],
   scopeLevels: [
-    { id: "lean", label: "Lean scope", modifier: 0, summary: "A tight first version with essential pages or flows." },
-    { id: "standard", label: "Standard scope", modifier: 32000, summary: "More depth, stronger content structure, and more polish." },
-    { id: "expanded", label: "Expanded scope", modifier: 76000, summary: "Broader content, templates, and higher visual or technical ambition." }
+    {
+      id: "lean",
+      label: "Lean scope",
+      modifier: 0,
+      summary: "A tight first version with essential pages or flows."
+    },
+    {
+      id: "standard",
+      label: "Standard scope",
+      modifier: 32000,
+      summary: "More depth, stronger content structure, and more polish."
+    },
+    {
+      id: "expanded",
+      label: "Expanded scope",
+      modifier: 76000,
+      summary: "Broader content, templates, and higher visual or technical ambition."
+    }
   ],
   contentSupport: [
-    { id: "client", label: "Content ready", modifier: 0, summary: "You already have usable copy, structure, and assets." },
-    { id: "guided", label: "Guided support", modifier: 18000, summary: "We help shape messaging, content flow, and page priorities." },
-    { id: "full", label: "Full content help", modifier: 42000, summary: "We support content planning, restructuring, and launch preparation." }
+    {
+      id: "client",
+      label: "Content ready",
+      modifier: 0,
+      summary: "You already have usable copy, structure, and assets."
+    },
+    {
+      id: "guided",
+      label: "Guided support",
+      modifier: 18000,
+      summary: "We help shape messaging, content flow, and page priorities."
+    },
+    {
+      id: "full",
+      label: "Full content help",
+      modifier: 42000,
+      summary: "We support content planning, restructuring, and launch preparation."
+    }
   ],
   integrations: [
-    { id: "minimal", label: "Minimal integrations", modifier: 0, summary: "Basic forms, analytics, and simple third-party tools." },
-    { id: "moderate", label: "Moderate integrations", modifier: 28000, summary: "CRM, bookings, payment flows, or data syncs." },
-    { id: "advanced", label: "Advanced integrations", modifier: 68000, summary: "Complex APIs, multi-system workflows, or custom logic." }
+    {
+      id: "minimal",
+      label: "Minimal integrations",
+      modifier: 0,
+      summary: "Basic forms, analytics, and simple third-party tools."
+    },
+    {
+      id: "moderate",
+      label: "Moderate integrations",
+      modifier: 28000,
+      summary: "CRM, bookings, payment flows, or data syncs."
+    },
+    {
+      id: "advanced",
+      label: "Advanced integrations",
+      modifier: 68000,
+      summary: "Complex APIs, multi-system workflows, or custom logic."
+    }
   ],
   timeline: [
-    { id: "flexible", label: "Flexible timeline", modifier: 0, summary: "A normal planning and delivery pace." },
-    { id: "priority", label: "Priority timeline", modifier: 22000, summary: "A faster pace with tighter feedback loops." },
-    { id: "accelerated", label: "Accelerated timeline", modifier: 52000, summary: "Reserved for urgent launches and compressed delivery windows." }
+    {
+      id: "flexible",
+      label: "Flexible timeline",
+      modifier: 0,
+      summary: "A normal planning and delivery pace."
+    },
+    {
+      id: "priority",
+      label: "Priority timeline",
+      modifier: 22000,
+      summary: "A faster pace with tighter feedback loops."
+    },
+    {
+      id: "accelerated",
+      label: "Accelerated timeline",
+      modifier: 52000,
+      summary: "Reserved for urgent launches and compressed delivery windows."
+    }
   ]
 };

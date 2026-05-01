@@ -22,14 +22,14 @@ export function SectionHeading({
         align === "center" && "mx-auto text-center"
       )}
     >
-      <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
+      <p className="eyebrow">
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+      <h2 className="mt-4 max-w-[13ch] font-display text-4xl font-semibold leading-[0.96] tracking-tight text-balance sm:text-5xl lg:text-6xl">
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 text-base leading-8 text-muted-foreground sm:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
           {description}
         </p>
       ) : null}

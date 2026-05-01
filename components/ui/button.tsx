@@ -5,18 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold transition-[transform,background-color,color,border-color,box-shadow] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 motion-safe:hover:-translate-y-0.5",
+  "inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold transition-[background-color,color,border-color,box-shadow,opacity] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-sm hover:bg-primary/92 hover:shadow-md",
+          "bg-primary text-primary-foreground shadow-sm hover:bg-primary/94 hover:shadow-[0_12px_32px_rgba(39,35,122,0.16)]",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/88 hover:shadow-sm",
         outline:
-          "border border-border bg-background/70 text-foreground hover:border-primary/25 hover:bg-accent hover:text-accent-foreground hover:shadow-sm",
+          "border border-border bg-background/70 text-foreground hover:border-primary/25 hover:bg-background hover:text-foreground hover:shadow-sm",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "h-auto rounded-none px-0 text-primary underline-offset-4 hover:underline hover:shadow-none motion-safe:hover:translate-y-0"
+        link: "h-auto rounded-none px-0 text-primary underline-offset-4 hover:underline hover:shadow-none"
       },
       size: {
         default: "h-11 px-5",

@@ -50,12 +50,12 @@ export function PageHeader({
               as="div"
               y={16}
               duration={0.5}
-              className="inline-flex max-w-3xl flex-col rounded-lg bg-black/14 px-5 py-5 backdrop-blur-[1px] sm:px-6 sm:py-6"
+              className="inline-flex max-w-3xl flex-col rounded-lg border border-white/12 bg-black/14 px-5 py-5 backdrop-blur-[1px] sm:px-6 sm:py-6"
             >
-              <p className="text-sm font-bold uppercase tracking-[0.26em] text-primary">
+              <p className="eyebrow">
                 {label}
               </p>
-              <h1 className="mt-5 max-w-[14ch] text-balance text-4xl font-black tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:text-5xl lg:text-6xl xl:text-[4.75rem]">
+              <h1 className="mt-5 max-w-[14ch] font-display text-balance text-5xl font-semibold leading-[0.92] tracking-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.42)] sm:text-6xl lg:text-7xl xl:text-[5.4rem]">
                 {title}
               </h1>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.34)] sm:text-base sm:leading-8 lg:text-lg">

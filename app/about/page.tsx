@@ -45,7 +45,7 @@ export default async function AboutPage() {
             <StaggerContainer className="mt-8 grid gap-3">
               {aboutHighlights.map((item) => (
                 <StaggerItem key={item}>
-                  <div className="flex gap-3 rounded-lg bg-card p-4">
+                  <div className="interactive-card flex gap-3 rounded-lg border border-border/70 bg-card p-4">
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-primary" />
                     <p className="font-medium leading-7">{item}</p>
                   </div>
@@ -72,22 +72,22 @@ export default async function AboutPage() {
       >
         <StaggerContainer className="container grid gap-6 md:grid-cols-2">
           <StaggerItem>
-            <div className="rounded-lg border border-border bg-background p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
+            <div className="interactive-card rounded-lg border border-border bg-background p-8">
+              <p className="eyebrow">
                 Mission
               </p>
-              <h2 className="mt-4 text-3xl font-black">Build digital systems that create trust and momentum.</h2>
+              <h2 className="mt-4 max-w-[12ch] display-title text-4xl leading-[0.96]">Build digital systems that create trust and momentum.</h2>
               <p className="mt-5 leading-8 text-muted-foreground">
                 Our mission is to help clients show up professionally online, serve their audience better, and grow with the right technology behind them.
               </p>
             </div>
           </StaggerItem>
           <StaggerItem>
-            <div className="rounded-lg border border-border bg-background p-8">
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
+            <div className="interactive-card rounded-lg border border-border bg-background p-8">
+              <p className="eyebrow">
                 Vision
               </p>
-              <h2 className="mt-4 text-3xl font-black">Make premium digital delivery more clear, useful, and dependable.</h2>
+              <h2 className="mt-4 max-w-[13ch] display-title text-4xl leading-[0.96]">Make premium digital delivery more clear, useful, and dependable.</h2>
               <p className="mt-5 leading-8 text-muted-foreground">
                 We want every client to understand what is being built, why it matters, and how it will support their next stage.
               </p>
@@ -106,9 +106,9 @@ export default async function AboutPage() {
           <StaggerContainer className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
               <StaggerItem key={value.title}>
-                <div className="rounded-lg border border-border bg-card p-6">
+                <div className="interactive-card rounded-lg border border-border bg-card p-6">
                   <value.icon className="h-7 w-7 text-primary" />
-                  <h3 className="mt-5 text-lg font-bold">{value.title}</h3>
+                  <h3 className="mt-5 display-title text-[1.55rem] leading-none">{value.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-muted-foreground">
                     {value.text}
                   </p>
@@ -128,9 +128,9 @@ export default async function AboutPage() {
           <StaggerContainer className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {reasons.map((reason) => (
               <StaggerItem key={reason.title}>
-                <div className="rounded-lg border border-border bg-background p-6">
+                <div className="interactive-card rounded-lg border border-border bg-background p-6">
                   <reason.icon className="h-7 w-7 text-primary" />
-                  <h3 className="mt-5 text-lg font-bold">{reason.title}</h3>
+                  <h3 className="mt-5 display-title text-[1.55rem] leading-none">{reason.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-muted-foreground">
                     {reason.text}
                   </p>

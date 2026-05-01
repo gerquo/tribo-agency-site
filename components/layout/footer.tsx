@@ -20,7 +20,7 @@ export function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border bg-card/86 backdrop-blur">
       <div className="container grid gap-10 py-12 lg:grid-cols-[1.15fr_0.55fr_0.65fr_0.75fr]">
         <div>
           <Link href="/" className="flex items-center gap-3">
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.18em]">
+          <h2 className="eyebrow text-foreground">
             Explore
           </h2>
           <div className="mt-5 grid gap-3">
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.18em]">
+          <h2 className="eyebrow text-foreground">
             Services
           </h2>
           <div className="mt-5 grid gap-3">
@@ -87,7 +87,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.18em]">
+          <h2 className="eyebrow text-foreground">
             Contact
           </h2>
           <div className="mt-5 grid gap-3 text-sm text-muted-foreground">
