@@ -178,13 +178,13 @@ export default async function Home() {
           <StaggerContainer className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {reasons.slice(0, 4).map((reason) => (
               <StaggerItem key={reason.title}>
-                <div className="section-panel p-6">
+                <div className="section-panel flex h-full flex-col p-6">
                   <p className="eyebrow">
                     Standard
                   </p>
                   <reason.icon className="h-7 w-7 text-primary" />
-                  <h3 className="mt-5 text-lg font-bold">{reason.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  <h3 className="mt-5 min-h-[3.25rem] text-lg font-bold">{reason.title}</h3>
+                  <p className="mt-3 flex-1 text-sm leading-7 text-muted-foreground">
                     {reason.text}
                   </p>
                 </div>

@@ -438,3 +438,12 @@
  ✓ Compiled in 8.6s (2338 modules)
  ✓ Compiled in 29.6s (1023 modules)
  ✓ Compiled in 14.8s (1023 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 6s (1333 modules)
+ GET / 500 in 7303ms
+ GET / 500 in 90ms
+ ✓ Compiled in 19.2s (1315 modules)
+ ✓ Compiled in 43.6s (1315 modules)
+ ✓ Compiled in 3.6s (1315 modules)
+ ✓ Compiled in 3.5s (1315 modules)
+ ✓ Compiled in 3s (1315 modules)

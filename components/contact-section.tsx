@@ -77,7 +77,7 @@ export function ContactSection() {
           <StaggerContainer className="mt-8 grid gap-3">
             {contactDetails.map((detail) => (
               <StaggerItem key={detail.label}>
-                <div className="interactive-card flex gap-4 rounded-lg border border-border bg-card/90 p-4">
+                <div className="interactive-card flex h-full gap-4 rounded-lg border border-border bg-card/90 p-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-primary/12 text-primary">
                     <detail.icon className="h-5 w-5" />
                   </div>

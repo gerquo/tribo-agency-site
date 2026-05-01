@@ -27,23 +27,32 @@ const darkHeroRoutes = new Set([
 
 export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [pastHero, setPastHero] = useState(false);
   const [sectionTheme, setSectionTheme] = useState<ResolvedNavbarTheme | null>(null);
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
-  const baseSurfaceTheme: ResolvedNavbarTheme =
-    resolvedTheme === "dark" ? "dark" : "light";
   const hasDarkHero = pathname
     ? darkHeroRoutes.has(pathname) || pathname.startsWith("/projects/")
     : false;
   const usesSectionThemeDetection = pathname === "/";
+  const initialAdaptiveTheme: ResolvedNavbarTheme = hasDarkHero ? "dark" : "light";
+  const baseSurfaceTheme: ResolvedNavbarTheme = mounted
+    ? resolvedTheme === "dark"
+      ? "dark"
+      : "light"
+    : initialAdaptiveTheme;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (navTheme !== "adaptive") {
+    if (navTheme !== "adaptive" || !mounted) {
       return;
     }
 
@@ -89,10 +98,10 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
         cancelAnimationFrame(frameId);
       }
     };
-  }, [hasDarkHero, navTheme, pathname]);
+  }, [hasDarkHero, mounted, navTheme, pathname]);
 
   useEffect(() => {
-    if (navTheme !== "adaptive" || !usesSectionThemeDetection) {
+    if (navTheme !== "adaptive" || !usesSectionThemeDetection || !mounted) {
       setSectionTheme(null);
       return;
     }
@@ -147,7 +156,7 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
         cancelAnimationFrame(frameId);
       }
     };
-  }, [baseSurfaceTheme, navTheme, pathname, usesSectionThemeDetection]);
+  }, [baseSurfaceTheme, mounted, navTheme, pathname, usesSectionThemeDetection]);
 
   const resolvedVariant = useMemo<ResolvedNavbarTheme>(() => {
     if (navTheme === "light" || navTheme === "dark") {
