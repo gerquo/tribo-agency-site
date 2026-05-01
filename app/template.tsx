@@ -1,7 +1,9 @@
+import { PageTransitionShell } from "@/components/page-transition-shell";
+
 export default function Template({
   children
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <PageTransitionShell>{children}</PageTransitionShell>;
 }

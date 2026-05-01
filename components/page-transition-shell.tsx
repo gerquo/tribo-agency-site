@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { BrandLoadingScreen } from "@/components/brand-loading-screen";
@@ -10,17 +11,27 @@ export function PageTransitionShell({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   const reduceMotion = useReducedMotion();
-  const [showLoader, setShowLoader] = useState(true);
+  const hasMountedRef = useRef(false);
+  const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(
-      () => setShowLoader(false),
-      reduceMotion ? 120 : 420
-    );
+    const duration = reduceMotion ? 140 : 340;
+
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      setShowLoader(true);
+
+      const initialTimeoutId = window.setTimeout(() => setShowLoader(false), duration);
+      return () => window.clearTimeout(initialTimeoutId);
+    }
+
+    setShowLoader(true);
+    const timeoutId = window.setTimeout(() => setShowLoader(false), duration);
 
     return () => window.clearTimeout(timeoutId);
-  }, [reduceMotion]);
+  }, [pathname, reduceMotion]);
 
   return (
     <>
@@ -28,11 +39,11 @@ export function PageTransitionShell({
         {showLoader ? (
           <motion.div
             key="page-loader"
-            className="fixed inset-0 z-[120]"
-            initial={{ opacity: 1 }}
+            className="pointer-events-none fixed inset-0 z-[120]"
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: reduceMotion ? 0.14 : 0.24, ease: "easeOut" }}
+            transition={{ duration: reduceMotion ? 0.12 : 0.22, ease: "easeOut" }}
           >
             <BrandLoadingScreen />
           </motion.div>
@@ -40,9 +51,9 @@ export function PageTransitionShell({
       </AnimatePresence>
 
       <motion.div
-        initial={{ opacity: 0.94 }}
+        initial={false}
         animate={{ opacity: 1 }}
-        transition={{ duration: reduceMotion ? 0.12 : 0.2, ease: "easeOut" }}
+        transition={{ duration: reduceMotion ? 0.1 : 0.18, ease: "easeOut" }}
       >
         {children}
       </motion.div>
