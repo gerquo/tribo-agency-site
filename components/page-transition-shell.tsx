@@ -1,7 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { BrandLoadingScreen } from "@/components/brand-loading-screen";
@@ -11,27 +10,15 @@ export function PageTransitionShell({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
   const reduceMotion = useReducedMotion();
-  const hasMountedRef = useRef(false);
-  const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
     const duration = reduceMotion ? 140 : 340;
-
-    if (!hasMountedRef.current) {
-      hasMountedRef.current = true;
-      setShowLoader(true);
-
-      const initialTimeoutId = window.setTimeout(() => setShowLoader(false), duration);
-      return () => window.clearTimeout(initialTimeoutId);
-    }
-
-    setShowLoader(true);
     const timeoutId = window.setTimeout(() => setShowLoader(false), duration);
 
     return () => window.clearTimeout(timeoutId);
-  }, [pathname, reduceMotion]);
+  }, [reduceMotion]);
 
   return (
     <>
