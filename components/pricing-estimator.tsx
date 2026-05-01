@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/animations/reveal";
 import { Button } from "@/components/ui/button";
 import type { PricingEstimatorContent } from "@/lib/pricing-content";
-import type { ModifierOption, ProjectTypeOption } from "@/lib/pricing";
+import type { ModifierOption, PricingPackage, ProjectTypeOption } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
 type OptionGroup =
@@ -19,8 +19,38 @@ type OptionGroup =
 
 type SelectionState = Record<OptionGroup, string>;
 
+type ParsedRange = {
+  min: number;
+  max: number | null;
+  openEnded: boolean;
+};
+
 function formatCedi(value: number) {
   return `GH₵${value.toLocaleString("en-GH")}`;
+}
+
+function roundToHundred(value: number) {
+  return Math.round(value / 100) * 100;
+}
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function parsePriceRange(range: string): ParsedRange | null {
+  const values = Array.from(range.matchAll(/\d[\d,]*/g)).map((match) =>
+    Number(match[0].replace(/,/g, ""))
+  );
+
+  if (values.length === 0) {
+    return null;
+  }
+
+  return {
+    min: values[0],
+    max: values[1] ?? null,
+    openEnded: range.includes("+")
+  };
 }
 
 function buildDefaults(options: PricingEstimatorContent): SelectionState {
@@ -45,10 +75,34 @@ function getModifierOption(
   return options[group].find((item) => item.id === id) ?? options[group][0];
 }
 
+function getNormalizedSubtotal(options: PricingEstimatorContent, subtotal: number) {
+  const min =
+    Math.min(...options.projectTypes.map((item) => item.base)) +
+    Math.min(...options.scopeLevels.map((item) => item.modifier)) +
+    Math.min(...options.contentSupport.map((item) => item.modifier)) +
+    Math.min(...options.integrations.map((item) => item.modifier)) +
+    Math.min(...options.timeline.map((item) => item.modifier));
+
+  const max =
+    Math.max(...options.projectTypes.map((item) => item.base)) +
+    Math.max(...options.scopeLevels.map((item) => item.modifier)) +
+    Math.max(...options.contentSupport.map((item) => item.modifier)) +
+    Math.max(...options.integrations.map((item) => item.modifier)) +
+    Math.max(...options.timeline.map((item) => item.modifier));
+
+  if (max <= min) {
+    return 0.5;
+  }
+
+  return clamp((subtotal - min) / (max - min), 0, 1);
+}
+
 export function PricingEstimator({
-  options
+  options,
+  packages
 }: {
   options: PricingEstimatorContent;
+  packages: PricingPackage[];
 }) {
   const [selection, setSelection] = useState<SelectionState>(() => buildDefaults(options));
 
@@ -66,12 +120,37 @@ export function PricingEstimator({
       integrationLevel.modifier +
       timeline.modifier;
 
-    const floor = Math.max(3000, Math.round(subtotal * 0.9 / 100) * 100);
-    const ceiling = Math.max(floor + 500, Math.round(subtotal * 1.18 / 100) * 100);
+    const normalized = getNormalizedSubtotal(options, subtotal);
+    const packageRanges = packages
+      .map((item) => parsePriceRange(item.range))
+      .filter((item): item is ParsedRange => item !== null);
+
+    let floor = roundToHundred(projectType.base);
+    let ceiling = roundToHundred(projectType.base * 1.15);
+    let showPlus = false;
+
+    if (packageRanges.length > 0) {
+      const overallMin = packageRanges[0].min;
+      const lastRange = packageRanges[packageRanges.length - 1];
+      const overallMax = lastRange.max ?? roundToHundred(lastRange.min * 1.35);
+      const midpoint = overallMin + normalized * (overallMax - overallMin);
+      const spread = clamp(midpoint * 0.2, 700, Math.max(1400, midpoint * 0.28));
+
+      floor = roundToHundred(clamp(midpoint - spread / 2, overallMin, overallMax));
+      ceiling = roundToHundred(
+        clamp(
+          midpoint + spread / 2,
+          floor + 500,
+          lastRange.openEnded ? overallMax + spread * 0.35 : overallMax
+        )
+      );
+      showPlus = lastRange.openEnded && ceiling >= overallMax * 0.98;
+    }
 
     return {
       floor,
       ceiling,
+      showPlus,
       summary: [
         projectType.label,
         scopeLevel.label,
@@ -80,7 +159,7 @@ export function PricingEstimator({
         timeline.label
       ]
     };
-  }, [options, selection]);
+  }, [options, packages, selection]);
 
   return (
     <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -145,8 +224,9 @@ export function PricingEstimator({
           <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
             Estimated range
           </p>
-          <p className="mt-3 font-display text-5xl font-semibold leading-[0.92] tracking-tight">
+          <p className="mt-3 min-h-[6.25rem] font-display text-5xl font-semibold leading-[0.92] tracking-tight">
             {formatCedi(estimate.floor)} - {formatCedi(estimate.ceiling)}
+            {estimate.showPlus ? "+" : ""}
           </p>
           <p className="mt-3 text-sm leading-7 text-muted-foreground">
             Most projects land after discovery, which helps us confirm scope,

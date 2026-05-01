@@ -24,7 +24,7 @@ export function TestimonialCard({
       <Card className="interactive-card h-full bg-card/86">
         <CardContent className="p-6">
           <Quote className="h-7 w-7 text-primary" aria-hidden />
-          <p className="mt-5 text-base leading-8 text-foreground">
+          <p className="mt-5 min-h-[12rem] text-base leading-8 text-foreground">
             <span aria-hidden>&ldquo;</span>
             {quote}
             <span aria-hidden>&rdquo;</span>

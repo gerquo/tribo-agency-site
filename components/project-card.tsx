@@ -50,18 +50,18 @@ export function ProjectCard({
           ) : null}
         </div>
         <CardContent className="flex h-full flex-col p-6">
-          <div>
+          <div className="flex flex-1 flex-col">
             <div className="mb-4 h-px w-16 bg-primary/70" />
             <p className="eyebrow">
               {project.client} / {project.year}
             </p>
-            <h3 className="mt-3 font-display text-[2rem] font-semibold leading-[0.98] tracking-tight transition-colors group-hover:text-primary">
+            <h3 className="mt-3 min-h-[3.95rem] font-display text-[2rem] font-semibold leading-[0.98] tracking-tight transition-colors group-hover:text-primary">
               {project.title}
             </h3>
             <p className="mt-2 text-sm font-medium text-foreground/80">
               Built for teams that need a sharper digital presence.
             </p>
-            <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted-foreground">
+            <p className="mt-3 min-h-[3.2rem] line-clamp-2 text-sm leading-6 text-muted-foreground">
               {supportingCopy}
             </p>
           </div>

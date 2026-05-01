@@ -72,7 +72,7 @@ export default async function PricingPage() {
 
       <section className="section-padding bg-card/45">
         <div className="container">
-          <PricingEstimator options={estimatorOptions} />
+          <PricingEstimator options={estimatorOptions} packages={pricingPackages} />
         </div>
       </section>
 
