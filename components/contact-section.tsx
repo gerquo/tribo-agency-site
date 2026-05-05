@@ -113,7 +113,7 @@ export function ContactSection() {
                 </div>
                 <Button asChild className="shrink-0">
                   <a
-                    href={`https://wa.me/${site.whatsapp.replace("+", "")}?text=Hi%20NovaCraft%20Digital%2C%20I%27d%20like%20to%20discuss%20a%20digital%20project.`}
+                    href={`https://wa.me/${site.whatsapp.replace("+", "")}?text=Hi%20Tribo%2C%20I%27d%20like%20to%20discuss%20a%20digital%20project.`}
                     target="_blank"
                     rel="noreferrer"
                   >

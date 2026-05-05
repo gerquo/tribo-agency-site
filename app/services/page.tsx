@@ -13,7 +13,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "Services",
   description:
-    "Explore NovaCraft Digital services including business websites, e-commerce, portfolio websites, organization websites, custom web applications, redesigns, and support.",
+    "Explore tribo services including web development, e-commerce, custom web apps, UI/UX design, SEO, and maintenance support.",
   path: "/services",
   image: pageImages.services
 });
@@ -27,8 +27,8 @@ export default async function ServicesPage() {
     <main>
       <PageHeader
         label="SERVICES"
-        title="Our Services"
-        subtitle="Premium digital services for websites, software, and growth systems. Choose a focused engagement or combine services into a complete strategy, design, development, and launch partnership."
+        title="What we build to grow your business."
+        subtitle="Web development, e-commerce, custom software, design systems, and optimization work shaped around trust, speed, and measurable business outcomes."
         image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80"
       />
 

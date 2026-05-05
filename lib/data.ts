@@ -2,14 +2,12 @@ import {
   BarChart3,
   BriefcaseBusiness,
   Code2,
-  GalleryHorizontal,
   Globe2,
   GraduationCap,
   Handshake,
   Headphones,
   Layers3,
   LayoutDashboard,
-  LineChart,
   Paintbrush,
   SearchCheck,
   ShieldCheck,
@@ -23,9 +21,9 @@ export const site = {
   email: "hello@tribo.studio",
   phone: "+1 (555) 019-4270",
   whatsapp: "+15550194270",
-  location: "Remote-first team serving clients worldwide",
+  location: "Accra, Ghana · Serving African businesses and global clients",
   description:
-    "tribo designs and develops premium websites, web applications, software, and digital systems for businesses, organizations, brands, and individuals."
+    "tribo designs and develops high-performing websites, web applications, and digital systems for African businesses and global clients ready to grow."
 };
 
 export const navLinks = [
@@ -39,10 +37,10 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "86+", label: "Projects Completed" },
-  { value: "54+", label: "Happy Clients" },
-  { value: "24/7", label: "Support Available" },
-  { value: "4-8 wks", label: "Average Delivery" }
+  { value: "86+", label: "Projects launched" },
+  { value: "54+", label: "Businesses supported" },
+  { value: "3×", label: "Average growth wins" },
+  { value: "4-8 wks", label: "Typical delivery" }
 ];
 
 export type HomepageStat = {
@@ -80,49 +78,39 @@ export const services: Service[] = [
   {
     icon: BriefcaseBusiness,
     slug: "business-websites",
-    title: "Business Websites",
+    title: "Web Development",
     description:
-      "Premium company websites that communicate trust, explain your offer clearly, and convert visitors into qualified leads.",
+      "Professional websites built to earn trust quickly, explain your offer clearly, and turn traffic into qualified leads.",
     href: "/services#business-websites",
     features: ["Conversion-focused pages", "CMS-ready structure", "Analytics setup"],
-    forWhom: "Service businesses, consultants, professional firms, and growing companies."
+    forWhom: "Service businesses, professional firms, startups, and growing companies."
   },
   {
     icon: Store,
     slug: "ecommerce-development",
-    title: "E-commerce Development",
+    title: "E-Commerce",
     description:
-      "Fast, polished online stores with product storytelling, simple checkout flows, and scalable merchandising systems.",
+      "Online stores designed to help customers discover products, trust your brand, and buy with less friction.",
     href: "/services#ecommerce-development",
     features: ["Product catalogs", "Payment integrations", "Campaign landing pages"],
     forWhom: "Retail brands, product businesses, boutiques, and digital sellers."
   },
   {
-    icon: GalleryHorizontal,
-    slug: "portfolio-websites",
-    title: "Portfolio Websites",
-    description:
-      "Elegant portfolio websites for individuals and studios who need to showcase work with credibility and style.",
-    href: "/services#portfolio-websites",
-    features: ["Case study layouts", "Media galleries", "Inquiry pathways"],
-    forWhom: "Creators, photographers, designers, agencies, and personal brands."
-  },
-  {
     icon: GraduationCap,
     slug: "organization-websites",
-    title: "Organization/School Websites",
+    title: "UI/UX Design",
     description:
-      "Accessible websites for institutions, nonprofits, schools, and organizations with clear content systems.",
+      "Interfaces and product flows that make your business feel more credible, usable, and conversion-ready.",
     href: "/services#organization-websites",
-    features: ["Program pages", "Resource libraries", "Donation or inquiry flows"],
-    forWhom: "Schools, NGOs, foundations, churches, associations, and civic teams."
+    features: ["Wireframes and page flows", "Design systems", "Trust-building interfaces"],
+    forWhom: "Teams launching new products, redesigning old platforms, or improving weak UX."
   },
   {
     icon: LayoutDashboard,
     slug: "custom-web-applications",
-    title: "Custom Web Applications",
+    title: "Custom Web Apps",
     description:
-      "Purpose-built dashboards, portals, booking platforms, and operational tools that support real workflows.",
+      "Dashboards, portals, booking systems, and internal tools built around your actual workflow and business model.",
     href: "/services#custom-web-applications",
     features: ["Role-based dashboards", "API integrations", "Secure data workflows"],
     forWhom: "Teams replacing spreadsheets, manual operations, or disconnected systems."
@@ -132,20 +120,20 @@ export const services: Service[] = [
     slug: "maintenance-support",
     title: "Maintenance & Support",
     description:
-      "Reliable ongoing support, performance improvements, updates, monitoring, and technical guidance after launch.",
+      "Ongoing updates, performance improvements, monitoring, and technical support after launch.",
     href: "/services#maintenance-support",
     features: ["Site updates", "Security checks", "Speed optimization"],
     forWhom: "Organizations that need a dependable digital partner after launch."
   },
   {
     icon: Sparkles,
-    slug: "website-redesign",
-    title: "Website Redesign",
+    slug: "seo-performance",
+    title: "SEO & Performance",
     description:
-      "Strategic redesigns that modernize your digital presence while improving messaging, usability, and conversion.",
-    href: "/services#website-redesign",
-    features: ["UX audit", "Content restructuring", "Migration planning"],
-    forWhom: "Brands with outdated, slow, unclear, or underperforming websites."
+      "Technical optimization and search-ready structure that help your site load faster, rank better, and convert more visits.",
+    href: "/services#seo-performance",
+    features: ["SEO foundations", "Core Web Vitals work", "Technical audits"],
+    forWhom: "Businesses with underperforming websites, weak search visibility, or slow page loads."
   }
 ];
 
@@ -367,33 +355,28 @@ export const projects: Project[] = [
 export const reasons = [
   {
     icon: Smartphone,
-    title: "Modern responsive design",
-    text: "Every interface is designed to feel premium and work beautifully across mobile, tablet, and desktop."
-  },
-  {
-    icon: LineChart,
-    title: "Fast optimized performance",
-    text: "We prioritize speed, clean assets, Core Web Vitals, and conversion-focused user journeys."
-  },
-  {
-    icon: Layers3,
-    title: "Tailored solutions",
-    text: "Your business model, audience, operations, and goals shape the solution from day one."
-  },
-  {
-    icon: Code2,
-    title: "Clean scalable code",
-    text: "Reusable components, maintainable architecture, and careful integrations keep your product ready to grow."
-  },
-  {
-    icon: SearchCheck,
-    title: "SEO-ready structure",
-    text: "Semantic content, metadata, accessibility, and page structure are built into the foundation."
+    title: "Faster websites, better outcomes",
+    text: "We prioritize speed, mobile usability, and clarity so your website helps people act instead of leaving."
   },
   {
     icon: ShieldCheck,
-    title: "Ongoing support",
-    text: "We help after launch with updates, improvements, monitoring, and technical guidance."
+    title: "Built to earn trust quickly",
+    text: "Your site often makes the first impression. We design polished digital experiences that make your business feel credible."
+  },
+  {
+    icon: Layers3,
+    title: "Solutions shaped to your business",
+    text: "We do not force template thinking onto real businesses. Scope, structure, and features are shaped around your goals."
+  },
+  {
+    icon: Code2,
+    title: "Work directly with the builders",
+    text: "You work with the people planning, designing, and building the product, which keeps decisions faster and clearer."
+  },
+  {
+    icon: SearchCheck,
+    title: "Growth-minded from day one",
+    text: "SEO, performance, structure, and conversion cues are considered early so your site supports real business growth."
   }
 ];
 
@@ -401,37 +384,22 @@ export const process = [
   {
     step: "01",
     title: "Discovery",
-    description: "Clarify goals, audiences, offers, competitors, technical needs, and project constraints."
+    description: "We learn how your business works, who you serve, and what the website or product needs to achieve."
   },
   {
     step: "02",
-    title: "Planning",
-    description: "Define sitemap, features, content needs, milestones, integrations, and success metrics."
+    title: "Strategy & Design",
+    description: "We shape the structure, messaging, and interface around trust, clarity, and conversion."
   },
   {
     step: "03",
-    title: "Design",
-    description: "Create wireframes, visual direction, reusable UI systems, and responsive page concepts."
+    title: "Build & Optimize",
+    description: "We develop a fast, dependable system with the right integrations, performance work, and polish."
   },
   {
     step: "04",
-    title: "Development",
-    description: "Build fast, accessible, reusable components with clean architecture and modern tooling."
-  },
-  {
-    step: "05",
-    title: "Testing",
-    description: "Review responsiveness, forms, performance, accessibility, integrations, and edge cases."
-  },
-  {
-    step: "06",
-    title: "Launch",
-    description: "Deploy, configure analytics, verify SEO basics, and support the go-live process."
-  },
-  {
-    step: "07",
-    title: "Support",
-    description: "Improve, maintain, monitor, and evolve the product as your needs grow."
+    title: "Launch & Grow",
+    description: "We launch carefully, verify the details, and help you keep improving after release."
   }
 ];
 
@@ -476,7 +444,7 @@ export const team = [
 export const testimonials = [
   {
     quote:
-      "NovaCraft gave our company a website that finally matches the quality of our work. The process was strategic, organized, and commercially focused.",
+      "Tribo gave our company a website that finally matches the quality of our work. The process was strategic, organized, and commercially focused.",
     name: "Daniel Price",
     role: "Operations Director, Apex Logistics",
     initials: "DP",

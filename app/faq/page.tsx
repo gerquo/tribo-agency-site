@@ -12,7 +12,7 @@ const faqCategories = ["Pricing", "Process", "Support", "Services"];
 export const metadata: Metadata = getPageMetadata({
   title: "FAQ",
   description:
-    "Answers to common questions about NovaCraft Digital pricing, process, support, services, website redesigns, maintenance, and custom software.",
+    "Answers to common questions about tribo pricing, process, support, services, maintenance, and custom software.",
   path: "/faq",
   image: pageImages.faq
 });
@@ -24,8 +24,8 @@ export default function FAQPage() {
     <main>
       <PageHeader
         label="FAQ"
-        title="Clear answers before we start building."
-        subtitle="Review common questions about pricing, process, support, and services. If your question is more specific, contact the team for a focused recommendation."
+        title="Questions? We’ve got answers."
+        subtitle="Review common questions about pricing, process, support, and delivery. If your case is more specific, contact the team for a focused recommendation."
         image="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80"
       />
       <section className="section-padding">

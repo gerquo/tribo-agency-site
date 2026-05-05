@@ -20,13 +20,13 @@ export function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="border-t border-border bg-card/86 backdrop-blur">
-      <div className="container grid gap-10 py-12 lg:grid-cols-[1.15fr_0.55fr_0.65fr_0.75fr]">
+    <footer className="border-t border-white/10 bg-foreground text-background">
+      <div className="container grid gap-10 py-14 lg:grid-cols-[1.15fr_0.55fr_0.65fr_0.75fr]">
         <div>
           <Link href="/" className="flex items-center gap-3">
-            <LogoMark />
+            <LogoMark textClassName="text-background" />
           </Link>
-          <p className="mt-5 max-w-md text-sm leading-7 text-muted-foreground">
+          <p className="mt-5 max-w-md text-sm leading-7 text-background/72">
             {site.description}
           </p>
           <div className="mt-6 flex gap-2">
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-foreground">
+          <h2 className="eyebrow text-background">
             Explore
           </h2>
           <div className="mt-5 grid gap-3">
@@ -59,8 +59,8 @@ export function Footer() {
                 className={cn(
                   "text-sm transition-colors",
                   pathname === link.href
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-background"
+                    : "text-background/72 hover:text-background"
                 )}
               >
                 {link.label}
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-foreground">
+          <h2 className="eyebrow text-background">
             Services
           </h2>
           <div className="mt-5 grid gap-3">
@@ -78,7 +78,7 @@ export function Footer() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm text-background/72 transition-colors hover:text-background"
               >
                 {service.title}
               </Link>
@@ -87,15 +87,15 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-foreground">
+          <h2 className="eyebrow text-background">
             Contact
           </h2>
-          <div className="mt-5 grid gap-3 text-sm text-muted-foreground">
-            <a href={`mailto:${site.email}`} className="hover:text-foreground">
+          <div className="mt-5 grid gap-3 text-sm text-background/72">
+            <a href={`mailto:${site.email}`} className="hover:text-background">
               {site.email}
             </a>
             {!isPlaceholderPhone(site.phone) ? (
-              <a href={`tel:${site.phone}`} className="hover:text-foreground">
+              <a href={`tel:${site.phone}`} className="hover:text-background">
                 {site.phone}
               </a>
             ) : null}
@@ -103,8 +103,8 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-border py-5">
-        <p className="container text-sm text-muted-foreground">
+      <div className="border-t border-white/10 py-5">
+        <p className="container text-sm text-background/60">
           {"\u00a9"} {new Date().getFullYear()} {site.name}. Built for ambitious digital launches.
         </p>
       </div>

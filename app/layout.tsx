@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
@@ -14,19 +13,6 @@ import {
 } from "@/lib/site";
 
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap"
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   ...getDefaultMetadata(),
@@ -74,7 +60,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${cormorant.variable} font-sans`}>
+      <body className="font-sans">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <script
             type="application/ld+json"

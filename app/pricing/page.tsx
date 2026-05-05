@@ -18,7 +18,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "Pricing",
   description:
-    "Get a fair idea of website and software pricing at NovaCraft Digital, including what affects cost and what to expect for different project scopes.",
+    "Get a clear idea of website and software pricing at tribo, including what affects cost and what to expect for different project scopes.",
   path: "/pricing",
   image: pageImages.pricing
 });

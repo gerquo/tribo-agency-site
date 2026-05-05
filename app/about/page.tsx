@@ -15,7 +15,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "About",
   description:
-    "Learn about NovaCraft Digital, a premium digital team building websites, software, web apps, and digital systems.",
+    "Learn about tribo, a Ghana-based digital team building websites, software, and growth systems for ambitious businesses.",
   path: "/about",
   image: pageImages.about
 });
@@ -29,8 +29,8 @@ export default async function AboutPage() {
     <main>
       <PageHeader
         label="ABOUT"
-        title="A professional digital team for organizations that need work done properly."
-        subtitle="We combine strategy, design, engineering, and launch support to create websites and software that look credible, perform quickly, and support real operations."
+        title="Built in Ghana for businesses that want to compete seriously online."
+        subtitle="We combine strategy, design, engineering, and launch support to create websites and digital systems that help businesses grow with more trust and better execution."
         image="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
       />
 

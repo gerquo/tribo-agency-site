@@ -9,7 +9,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "Portfolio",
   description:
-    "Explore sample digital agency projects including websites, e-commerce stores, web apps, branding, UI/UX, dashboards, and organization websites.",
+    "Explore selected tribo projects across websites, e-commerce, custom software, dashboards, and digital growth systems.",
   path: "/portfolio",
   image: pageImages.portfolio
 });
@@ -24,8 +24,8 @@ export default async function PortfolioPage() {
     <main>
       <PageHeader
         label="PORTFOLIO"
-        title="Selected projects built to look credible and perform in the real world."
-        subtitle="Browse a data-driven portfolio grid with category filters, case study links, technology stacks, and professional project presentation."
+        title="Work that speaks for itself."
+        subtitle="Browse selected projects across websites, commerce, and software systems built to improve trust, speed, and conversion."
         image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
       />
       <section className="section-padding">
