@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Reveal } from "@/components/animations/reveal";
+import { BrandScene } from "@/components/brand-scene";
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-container";
 import { CtaSection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
@@ -18,7 +19,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "Pricing",
   description:
-    "Get a clear idea of website and software pricing at tribo, including what affects cost and what to expect for different project scopes.",
+    "Get a clear idea of website and software pricing at tribit, including what affects cost and what to expect for different project scopes.",
   path: "/pricing",
   image: pageImages.pricing
 });
@@ -90,6 +91,9 @@ export default async function PricingPage() {
               content readiness, number of templates, integrations, approvals,
               and whether the project also includes UX strategy or support after launch.
             </p>
+            <div className="mt-8 max-w-xl">
+              <BrandScene variant="pricing" />
+            </div>
           </Reveal>
           <Reveal as="div" className="section-panel-alt p-6" delay={0.05}>
             <StaggerContainer className="grid gap-4">

@@ -2,6 +2,7 @@ import {
   Clock3,
   Dribbble,
   Github,
+  Instagram,
   Linkedin,
   Mail,
   MapPin,
@@ -11,11 +12,13 @@ import {
 
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/animations/reveal";
+import { BrandScene } from "@/components/brand-scene";
+import { XLogo } from "@/components/icons/x-logo";
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-container";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/data";
-import { isPlaceholderExternalUrl, isPlaceholderPhone } from "@/lib/utils";
+import { isPlaceholderPhone } from "@/lib/utils";
 
 const contactDetails = [
   {
@@ -54,9 +57,11 @@ const contactDetails = [
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
+  { label: "X", href: "https://x.com", icon: XLogo },
+  { label: "Instagram", href: "https://instagram.com", icon: Instagram },
   { label: "GitHub", href: "https://github.com", icon: Github },
   { label: "Dribbble", href: "https://dribbble.com", icon: Dribbble }
-].filter((social) => !isPlaceholderExternalUrl(social.href));
+];
 
 export function ContactSection() {
   return (
@@ -73,6 +78,10 @@ export function ContactSection() {
             title="Tell us what you want to build."
             description="Share your goals, scope, timeline, and budget range. We will review the brief and reply with the next best step."
           />
+
+          <div className="mt-8">
+            <BrandScene variant="contact" />
+          </div>
 
           <StaggerContainer className="mt-8 grid gap-3">
             {contactDetails.map((detail) => (
@@ -113,7 +122,7 @@ export function ContactSection() {
                 </div>
                 <Button asChild className="shrink-0">
                   <a
-                    href={`https://wa.me/${site.whatsapp.replace("+", "")}?text=Hi%20Tribo%2C%20I%27d%20like%20to%20discuss%20a%20digital%20project.`}
+                    href={`https://wa.me/${site.whatsapp.replace("+", "")}?text=Hi%20Tribit%2C%20I%27d%20like%20to%20discuss%20a%20digital%20project.`}
                     target="_blank"
                     rel="noreferrer"
                   >

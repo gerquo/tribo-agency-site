@@ -2,31 +2,34 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Dribbble, Github, Linkedin, Mail } from "lucide-react";
+import { Dribbble, Github, Instagram, Linkedin, Mail } from "lucide-react";
 
+import { XLogo } from "@/components/icons/x-logo";
 import { LogoMark } from "@/components/logo-mark";
 import { Button } from "@/components/ui/button";
 import { navLinks, services, site } from "@/lib/data";
-import { cn, isPlaceholderExternalUrl, isPlaceholderPhone } from "@/lib/utils";
+import { cn, isPlaceholderPhone } from "@/lib/utils";
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com", icon: Github },
+  { label: "X", href: "https://x.com", icon: XLogo },
   { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
+  { label: "Instagram", href: "https://instagram.com", icon: Instagram },
   { label: "Dribbble", href: "https://dribbble.com", icon: Dribbble },
   { label: "Email", href: `mailto:${site.email}`, icon: Mail }
-].filter((social) => !isPlaceholderExternalUrl(social.href) || social.href.startsWith("mailto:"));
+];
 
 export function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="border-t border-white/10 bg-foreground text-background">
+    <footer className="border-t border-white/10 bg-[hsl(247_23%_14%)] text-white">
       <div className="container grid gap-10 py-14 lg:grid-cols-[1.15fr_0.55fr_0.65fr_0.75fr]">
         <div>
           <Link href="/" className="flex items-center gap-3">
-            <LogoMark textClassName="text-background" />
+            <LogoMark textClassName="text-white" />
           </Link>
-          <p className="mt-5 max-w-md text-sm leading-7 text-background/72">
+          <p className="mt-5 max-w-md text-sm leading-7 text-white/70">
             {site.description}
           </p>
           <div className="mt-6 flex gap-2">
@@ -47,7 +50,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-background">
+          <h2 className="eyebrow text-white">
             Explore
           </h2>
           <div className="mt-5 grid gap-3">
@@ -59,8 +62,8 @@ export function Footer() {
                 className={cn(
                   "text-sm transition-colors",
                   pathname === link.href
-                    ? "text-background"
-                    : "text-background/72 hover:text-background"
+                    ? "text-white"
+                    : "text-white/70 hover:text-white"
                 )}
               >
                 {link.label}
@@ -70,7 +73,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-background">
+          <h2 className="eyebrow text-white">
             Services
           </h2>
           <div className="mt-5 grid gap-3">
@@ -78,7 +81,7 @@ export function Footer() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="text-sm text-background/72 transition-colors hover:text-background"
+                className="text-sm text-white/70 transition-colors hover:text-white"
               >
                 {service.title}
               </Link>
@@ -87,15 +90,15 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-background">
+          <h2 className="eyebrow text-white">
             Contact
           </h2>
-          <div className="mt-5 grid gap-3 text-sm text-background/72">
-            <a href={`mailto:${site.email}`} className="hover:text-background">
+          <div className="mt-5 grid gap-3 text-sm text-white/70">
+            <a href={`mailto:${site.email}`} className="hover:text-white">
               {site.email}
             </a>
             {!isPlaceholderPhone(site.phone) ? (
-              <a href={`tel:${site.phone}`} className="hover:text-background">
+              <a href={`tel:${site.phone}`} className="hover:text-white">
                 {site.phone}
               </a>
             ) : null}
@@ -104,7 +107,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5">
-        <p className="container text-sm text-background/60">
+        <p className="container text-sm text-white/55">
           {"\u00a9"} {new Date().getFullYear()} {site.name}. Built for ambitious digital launches.
         </p>
       </div>

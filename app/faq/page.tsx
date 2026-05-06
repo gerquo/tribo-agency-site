@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Reveal } from "@/components/animations/reveal";
+import { BrandScene } from "@/components/brand-scene";
 import { CtaSection } from "@/components/cta-section";
 import { FaqList } from "@/components/faq-list";
 import { PageHeader } from "@/components/page-header";
@@ -12,7 +13,7 @@ const faqCategories = ["Pricing", "Process", "Support", "Services"];
 export const metadata: Metadata = getPageMetadata({
   title: "FAQ",
   description:
-    "Answers to common questions about tribo pricing, process, support, services, maintenance, and custom software.",
+    "Answers to common questions about tribit pricing, process, support, services, maintenance, and custom software.",
   path: "/faq",
   image: pageImages.faq
 });
@@ -24,19 +25,26 @@ export default function FAQPage() {
     <main>
       <PageHeader
         label="FAQ"
-        title="Questions? We’ve got answers."
+        title="Questions? We've got answers."
         subtitle="Review common questions about pricing, process, support, and delivery. If your case is more specific, contact the team for a focused recommendation."
         image="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80"
       />
       <section className="section-padding">
         <div className="container grid gap-10">
           {faqCategories.map((category) => (
-            <Reveal key={category} as="section" className="grid gap-5 lg:grid-cols-[0.35fr_0.65fr]">
+            <Reveal
+              key={category}
+              as="section"
+              className="grid gap-5 lg:grid-cols-[0.35fr_0.65fr]"
+            >
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">
                   {category}
                 </p>
                 <h2 className="mt-3 text-2xl font-black">{category} questions</h2>
+                <div className="mt-5">
+                  <BrandScene variant="faq" className="p-5" />
+                </div>
               </div>
               <FaqList items={faqs.filter((faq) => faq.category === category)} />
             </Reveal>

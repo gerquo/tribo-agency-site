@@ -7,7 +7,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "Contact",
   description:
-    "Contact tribo to request a quote for a website, e-commerce store, custom web app, redesign, or digital support.",
+    "Contact tribit to request a quote for a website, e-commerce store, custom web app, redesign, or digital support.",
   path: "/contact",
   image: pageImages.contact
 });

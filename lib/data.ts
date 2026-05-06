@@ -17,13 +17,13 @@ import {
 } from "lucide-react";
 
 export const site = {
-  name: "tribo",
-  email: "hello@tribo.studio",
+  name: "tribit",
+  email: "hello@tribit.studio",
   phone: "+1 (555) 019-4270",
   whatsapp: "+15550194270",
   location: "Accra, Ghana · Serving African businesses and global clients",
   description:
-    "tribo designs and develops high-performing websites, web applications, and digital systems for African businesses and global clients ready to grow."
+    "tribit designs and develops high-performing websites, web applications, and digital systems for African businesses and global clients ready to grow."
 };
 
 export const navLinks = [
@@ -444,7 +444,7 @@ export const team = [
 export const testimonials = [
   {
     quote:
-      "Tribo gave our company a website that finally matches the quality of our work. The process was strategic, organized, and commercially focused.",
+      "Tribit gave our company a website that finally matches the quality of our work. The process was strategic, organized, and commercially focused.",
     name: "Daniel Price",
     role: "Operations Director, Apex Logistics",
     initials: "DP",

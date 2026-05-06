@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Reveal } from "@/components/animations/reveal";
+import { BrandScene } from "@/components/brand-scene";
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-container";
 import { CtaSection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
@@ -13,7 +14,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "Services",
   description:
-    "Explore tribo services including web development, e-commerce, custom web apps, UI/UX design, SEO, and maintenance support.",
+    "Explore tribit services including web development, e-commerce, custom web apps, UI/UX design, SEO, and maintenance support.",
   path: "/services",
   image: pageImages.services
 });
@@ -31,6 +32,23 @@ export default async function ServicesPage() {
         subtitle="Web development, e-commerce, custom software, design systems, and optimization work shaped around trust, speed, and measurable business outcomes."
         image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80"
       />
+
+      <section className="pt-10 sm:pt-12">
+        <div className="container grid gap-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-center">
+          <Reveal>
+            <div className="section-panel p-6">
+              <p className="eyebrow">Built to move the business forward</p>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+                Each service is packaged around a commercial outcome: stronger trust,
+                cleaner UX, better conversions, or more reliable operations after launch.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <BrandScene variant="services" />
+          </Reveal>
+        </div>
+      </section>
 
       <section className="section-padding">
         <div className="container grid gap-6">

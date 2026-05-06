@@ -18,6 +18,7 @@ type ResolvedNavbarTheme = Exclude<NavbarVariant, "adaptive">;
 
 const darkHeroRoutes = new Set([
   "/about",
+  "/audit",
   "/services",
   "/portfolio",
   "/pricing",
@@ -245,7 +246,7 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle className={toggleClassName} />
           <Button asChild>
-            <Link href="/contact">Get a Quote</Link>
+            <Link href="/pricing">Get a Quote</Link>
           </Button>
         </div>
 
@@ -290,7 +291,7 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
               </Link>
             ))}
             <Button asChild className="mt-2">
-              <Link href="/contact" onClick={() => setOpen(false)}>
+              <Link href="/pricing" onClick={() => setOpen(false)}>
                 Get a Quote
               </Link>
             </Button>

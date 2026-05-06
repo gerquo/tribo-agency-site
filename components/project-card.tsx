@@ -23,7 +23,7 @@ export function ProjectCard({
 
   return (
     <Reveal as="article" className="h-full">
-      <Card className="group overflow-hidden rounded-lg border-border/85 bg-card/90 transition duration-300 hover:-translate-y-1 hover:border-primary/24 hover:shadow-premium">
+      <Card className="group overflow-hidden rounded-lg border-border/85 bg-card/92 transition duration-300 hover:-translate-y-1 hover:border-primary/24 hover:shadow-premium">
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={project.image}
@@ -55,13 +55,13 @@ export function ProjectCard({
             <p className="eyebrow">
               {project.client} / {project.year}
             </p>
-            <h3 className="mt-3 min-h-[3.95rem] font-display text-[2rem] font-semibold leading-[0.98] tracking-tight transition-colors group-hover:text-primary">
+            <h3 className="mt-3 min-h-[4.5rem] font-display text-[2.15rem] font-semibold leading-[0.96] tracking-tight transition-colors group-hover:text-primary">
               {project.title}
             </h3>
             <p className="mt-2 text-sm font-medium text-foreground/80">
-              Built for teams that need a sharper digital presence.
+              Built to improve trust, speed, and conversion.
             </p>
-            <p className="mt-3 min-h-[3.2rem] line-clamp-2 text-sm leading-6 text-muted-foreground">
+            <p className="mt-3 min-h-[4rem] line-clamp-2 text-sm leading-7 text-muted-foreground">
               {supportingCopy}
             </p>
           </div>

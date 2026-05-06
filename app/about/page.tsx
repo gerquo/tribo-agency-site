@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 
 import { Reveal } from "@/components/animations/reveal";
+import { BrandScene } from "@/components/brand-scene";
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-container";
 import { CtaSection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
@@ -15,7 +16,7 @@ import { getPageMetadata, pageImages } from "@/lib/site";
 export const metadata: Metadata = getPageMetadata({
   title: "About",
   description:
-    "Learn about tribo, a Ghana-based digital team building websites, software, and growth systems for ambitious businesses.",
+    "Learn about tribit, a Ghana-based digital team building websites, software, and growth systems for ambitious businesses.",
   path: "/about",
   image: pageImages.about
 });
@@ -42,6 +43,9 @@ export default async function AboutPage() {
               title="Built for teams that need more than a generic website."
               description={`${site.name} exists to help businesses, organizations, brands, and individuals turn serious ideas into polished digital products. We focus on clear positioning, strong user experience, maintainable code, and dependable delivery.`}
             />
+            <div className="mt-8">
+              <BrandScene variant="story" />
+            </div>
             <StaggerContainer className="mt-8 grid gap-3">
               {aboutHighlights.map((item) => (
                 <StaggerItem key={item}>
