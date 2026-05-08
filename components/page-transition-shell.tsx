@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { BrandLoadingScreen } from "@/components/brand-loading-screen";
@@ -11,14 +12,48 @@ export function PageTransitionShell({
   children: React.ReactNode;
 }) {
   const reduceMotion = useReducedMotion();
-  const [showLoader, setShowLoader] = useState(true);
+  const pathname = usePathname();
+  const [showLoader, setShowLoader] = useState(false);
+  const timeoutRef = useRef<number | null>(null);
+  const previousPathRef = useRef<string | null>(null);
 
   useEffect(() => {
-    const duration = reduceMotion ? 140 : 340;
-    const timeoutId = window.setTimeout(() => setShowLoader(false), duration);
+    if (typeof window === "undefined") {
+      return;
+    }
 
-    return () => window.clearTimeout(timeoutId);
-  }, [reduceMotion]);
+    if (timeoutRef.current) {
+      window.clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+
+    if (previousPathRef.current === null) {
+      previousPathRef.current = pathname;
+      setShowLoader(false);
+      return;
+    }
+
+    if (previousPathRef.current === pathname) {
+      return;
+    }
+
+    previousPathRef.current = pathname;
+    setShowLoader(true);
+    timeoutRef.current = window.setTimeout(
+      () => {
+        setShowLoader(false);
+        timeoutRef.current = null;
+      },
+      reduceMotion ? 80 : 180
+    );
+
+    return () => {
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+  }, [pathname, reduceMotion]);
 
   return (
     <>
@@ -27,10 +62,10 @@ export function PageTransitionShell({
           <motion.div
             key="page-loader"
             className="pointer-events-none fixed inset-0 z-[120]"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: reduceMotion ? 0.12 : 0.22, ease: "easeOut" }}
+            transition={{ duration: reduceMotion ? 0.08 : 0.16, ease: "easeOut" }}
           >
             <BrandLoadingScreen />
           </motion.div>
