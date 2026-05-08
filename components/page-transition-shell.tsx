@@ -22,6 +22,69 @@ export function PageTransitionShell({
       return;
     }
 
+    const handleDocumentClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      const target = event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      const anchor = target.closest("a");
+      if (!(anchor instanceof HTMLAnchorElement)) {
+        return;
+      }
+
+      if (anchor.target === "_blank" || anchor.hasAttribute("download")) {
+        return;
+      }
+
+      const href = anchor.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+        return;
+      }
+
+      const url = new URL(anchor.href, window.location.href);
+      if (url.origin !== window.location.origin) {
+        return;
+      }
+
+      const nextPath = `${url.pathname}${url.search}${url.hash}`;
+      const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+
+      if (nextPath === currentPath) {
+        return;
+      }
+
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+
+      setShowLoader(true);
+    };
+
+    window.document.addEventListener("click", handleDocumentClick, true);
+
+    return () => {
+      window.document.removeEventListener("click", handleDocumentClick, true);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     if (timeoutRef.current) {
       window.clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
@@ -44,7 +107,7 @@ export function PageTransitionShell({
         setShowLoader(false);
         timeoutRef.current = null;
       },
-      reduceMotion ? 80 : 180
+      reduceMotion ? 70 : 160
     );
 
     return () => {
@@ -65,7 +128,7 @@ export function PageTransitionShell({
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: reduceMotion ? 0.08 : 0.16, ease: "easeOut" }}
+            transition={{ duration: reduceMotion ? 0.08 : 0.14, ease: "easeOut" }}
           >
             <BrandLoadingScreen />
           </motion.div>

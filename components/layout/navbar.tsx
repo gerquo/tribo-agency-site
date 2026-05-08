@@ -266,23 +266,26 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
 
       <AnimatePresence>
         {open ? (
-          <>
-            <motion.div
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+            className="fixed inset-0 z-[60] lg:hidden"
+          >
+            <button
+              type="button"
               aria-label="Dismiss menu"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
-              className="fixed inset-0 z-40 bg-black/18 lg:hidden"
+              className="absolute inset-0 bg-black/18"
               onClick={() => setOpen(false)}
-              onTouchStart={() => setOpen(false)}
             />
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.18 }}
-              className="relative z-50 border-t border-border bg-background lg:hidden"
+              className="absolute inset-x-0 top-16 z-10 border-t border-border bg-background"
+              onClick={(event) => event.stopPropagation()}
             >
               <div className="container grid gap-3 py-5">
                 {navLinks.map((link) => (
@@ -308,7 +311,7 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
                 </Button>
               </div>
             </motion.div>
-          </>
+          </motion.div>
         ) : null}
       </AnimatePresence>
     </header>
