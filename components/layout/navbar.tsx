@@ -53,6 +53,35 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
   }, [pathname]);
 
   useEffect(() => {
+    if (!open || typeof window === "undefined") {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent | MouseEvent | TouchEvent) => {
+      const target = event.target;
+
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      if (
+        target.closest("[data-mobile-menu-panel='true']") ||
+        target.closest("[data-mobile-menu-toggle='true']")
+      ) {
+        return;
+      }
+
+      setOpen(false);
+    };
+
+    window.document.addEventListener("pointerdown", handlePointerDown, true);
+
+    return () => {
+      window.document.removeEventListener("pointerdown", handlePointerDown, true);
+    };
+  }, [open]);
+
+  useEffect(() => {
     if (navTheme !== "adaptive" || !mounted) {
       return;
     }
@@ -256,6 +285,7 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
             aria-label="Toggle menu"
             size="icon"
             variant="outline"
+            data-mobile-menu-toggle="true"
             className={toggleClassName}
             onClick={() => setOpen((value) => !value)}
           >
@@ -272,19 +302,17 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18 }}
             className="fixed inset-0 z-[60] lg:hidden"
+            onPointerDown={() => setOpen(false)}
           >
-            <button
-              type="button"
-              aria-label="Dismiss menu"
-              className="absolute inset-0 bg-black/18"
-              onClick={() => setOpen(false)}
-            />
+            <div aria-hidden="true" className="absolute inset-0 bg-black/18" />
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.18 }}
+              data-mobile-menu-panel="true"
               className="absolute inset-x-0 top-16 z-10 border-t border-border bg-background"
+              onPointerDown={(event) => event.stopPropagation()}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="container grid gap-3 py-5">
