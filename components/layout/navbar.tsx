@@ -266,37 +266,49 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
 
       <AnimatePresence>
         {open ? (
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.18 }}
-          className="border-t border-border bg-background lg:hidden"
-        >
-          <div className="container grid gap-3 py-5">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={pathname === link.href ? "page" : undefined}
-                className={cn(
-                  "rounded-md px-3 py-3 text-sm font-medium transition-colors",
-                  pathname === link.href
-                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
-                    : "text-slate-900 hover:bg-secondary hover:text-primary dark:text-white dark:hover:text-[hsl(247_69%_78%)]"
-                )}
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button asChild className="mt-2">
-              <Link href="/pricing" onClick={() => setOpen(false)}>
-                Get a Quote
-              </Link>
-            </Button>
-          </div>
-        </motion.div>
+          <>
+            <motion.button
+              type="button"
+              aria-label="Dismiss menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18 }}
+              className="fixed inset-x-0 bottom-0 top-16 z-40 bg-black/18 lg:hidden"
+              onClick={() => setOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.18 }}
+              className="relative z-50 border-t border-border bg-background lg:hidden"
+            >
+              <div className="container grid gap-3 py-5">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={pathname === link.href ? "page" : undefined}
+                    className={cn(
+                      "rounded-md px-3 py-3 text-sm font-medium transition-colors",
+                      pathname === link.href
+                        ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                        : "text-slate-900 hover:bg-secondary hover:text-primary dark:text-white dark:hover:text-[hsl(247_69%_78%)]"
+                    )}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Button asChild className="mt-2">
+                  <Link href="/pricing" onClick={() => setOpen(false)}>
+                    Get a Quote
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+          </>
         ) : null}
       </AnimatePresence>
     </header>
