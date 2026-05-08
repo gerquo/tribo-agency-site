@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
@@ -31,6 +31,8 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
   const [mounted, setMounted] = useState(false);
   const [pastHero, setPastHero] = useState(false);
   const [sectionTheme, setSectionTheme] = useState<ResolvedNavbarTheme | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement | null>(null);
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
   const hasDarkHero = pathname
@@ -51,6 +53,34 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!open || typeof window === "undefined") {
+      return;
+    }
+
+    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+      const target = event.target;
+
+      if (!(target instanceof Node)) {
+        return;
+      }
+
+      if (mobileMenuRef.current?.contains(target) || mobileToggleRef.current?.contains(target)) {
+        return;
+      }
+
+      setOpen(false);
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("touchstart", handlePointerDown, { passive: true });
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("touchstart", handlePointerDown);
+    };
+  }, [open]);
 
   useEffect(() => {
     if (navTheme !== "adaptive" || !mounted) {
@@ -253,6 +283,7 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
         <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle className={toggleClassName} />
           <Button
+            ref={mobileToggleRef}
             aria-label="Toggle menu"
             size="icon"
             variant="outline"
@@ -284,7 +315,7 @@ export function Navbar({ navTheme = "adaptive" }: { navTheme?: NavbarVariant }) 
               transition={{ duration: 0.18 }}
               className="relative z-50 border-t border-border bg-background lg:hidden"
             >
-              <div className="container grid gap-3 py-5">
+              <div ref={mobileMenuRef} className="container grid gap-3 py-5">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
